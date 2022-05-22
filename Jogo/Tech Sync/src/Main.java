@@ -5,7 +5,7 @@ public class Main {
     //Declaração de variáveis
     static String optionMenu, optionGame, optionMenuAtk, history;
     static boolean menu = true, play = false, menuAtk, sonicAtkS = false, frozenAtkS = false, enemyAtkS;
-    static int sleepTime, life, damage = 10, armor, cooldown, sonicAtk = 20, sonicAtkCD = 2, frozenAtk = 10, frozenAtkCD = 4, enemyLife, enemyDamage;
+    static int sleepTime, life, damage = 10, heal, cooldown, sonicAtk = 20, sonicAtkCD, frozenAtk = 10, frozenAtkCD, enemyLife, enemyDamage;
 
     //Instanciamento de objetos
     static Scanner input = new Scanner(System.in);
@@ -111,7 +111,7 @@ public class Main {
     }
 
     //Estatisticas do Player
-    public static void Player(int life, int damage, int armor, int cooldown){
+    public static void Player(int life, int damage, int heal, int cooldown){
         if(sonicAtkCD == 0){
             
         }
@@ -139,8 +139,8 @@ public class Main {
             //Ataques possíveis
             case "Atacar":
             case "atacar":
-                //Caso esteja no segundo Boss
-                if(sonicAtkS || !frozenAtkS){
+                //Caso tenha o segundo ataque disponível e já usado ou não o tenha
+                if(sonicAtkS && !frozenAtkS){
                     do{
                         history = "\nMenu de Ataque\n\n~Atacar~\n~Ataque Sônico~\n\nOpção: ";
                         texting(history, 35);
@@ -149,15 +149,48 @@ public class Main {
                             enemyLife -= damage;
                             menuAtk = true;
                         }else if(optionMenuAtk.equalsIgnoreCase("Ataque Sonico")){
-                            enemyLife -= (damage / 2 + sonicAtk);
-                            menuAtk = true;
+                            if(sonicAtkCD == 0){
+                                enemyLife -= (damage / 2 + sonicAtk);
+                                menuAtk = true;
+                                sonicAtkCD = 2;
+                            }else{
+                                history = "Este ataque está em TEMPO DE REGARGA por mais " + frozenAtkCD;
+                                texting(history, 35);
+                                menuAtk = false;
+                            }
                         }else{
                             history = "\nComando inválido ou digitado de maneira errada!\n";
                             texting(history, 35);
                             menuAtk = false;
                         }
                     }while(!menuAtk);
-                //Caso esteja no terceiro Boss
+                //Caso tenha o primeiro ataque disponível e já usado
+                }else if(!sonicAtkS && frozenAtkS){
+                    do{
+                        history = "\nMenu de Ataque\n\n~Atacar~\n~Ataque Sônico~\n\nOpção: ";
+                        texting(history, 35);
+                        optionMenuAtk = input.nextLine();
+                        if(optionMenuAtk.equalsIgnoreCase("Atacar")){
+                            enemyLife -= damage;
+                            menuAtk = true;
+                        }else if(optionMenuAtk.equalsIgnoreCase("Ataque de Gelo")){
+                            if(frozenAtkCD == 0){
+                                enemyLife -= (damage / 2 + frozenAtk);
+                                menuAtk = true;
+                                enemyAtkS = false;
+                                frozenAtkCD = 3;
+                            }else{
+                                history = "Este ataque está em TEMPO DE REGARGA por mais " + frozenAtkCD;
+                                texting(history, 35);
+                                menuAtk = false;
+                            }
+                        }else{
+                            history = "\nComando inválido ou digitado de maneira errada!\n";
+                            texting(history, 35);
+                            menuAtk = false;
+                        }
+                    }while(!menuAtk);
+                //Caso tenha os ataques disponíveis e ainda não os tenham usados
                 }else if(sonicAtkS && frozenAtkS){
                     do{
                         history = "\nMenu de Ataque\n\n~Atacar~\n~Ataque Sônico~\n~Ataque de Gelo~\n\nOpção: ";
@@ -167,19 +200,33 @@ public class Main {
                             enemyLife -= damage;
                             menuAtk = true;
                         }else if(optionMenuAtk.equalsIgnoreCase("Ataque Sonico")){
-                            enemyLife -= (damage / 2 + sonicAtk);
-                            menuAtk = true;
+                            if(sonicAtkCD == 0){
+                                enemyLife -= (damage / 2 + sonicAtk);
+                                menuAtk = true;
+                                sonicAtkCD = 2;
+                            }else{
+                                history = "Este ataque está em TEMPO DE REGARGA por mais " + frozenAtkCD;
+                                texting(history, 35);
+                                menuAtk = false;
+                            }
                         }else if(optionMenuAtk.equalsIgnoreCase("Ataque de Gelo")){
-                            enemyLife -= (damage / 2 + frozenAtk);
-                            menuAtk = true;
-                            enemyAtkS = false;
+                            if(frozenAtkCD == 0){
+                                enemyLife -= (damage / 2 + frozenAtk);
+                                menuAtk = true;
+                                enemyAtkS = false;
+                                frozenAtkCD = 3;
+                            }else{
+                                history = "Este ataque está em TEMPO DE REGARGA por mais " + frozenAtkCD;
+                                texting(history, 35);
+                                menuAtk = false;
+                            }
                         }else{
                             history = "\nComando inválido ou digitado de maneira errada!\n";
                             texting(history, 35);
                             menuAtk = false;
                         }
                     }while(!menuAtk);
-                //Caso esteja no primeiro Boss
+                //Caso não tenha adquirido os ataques especiais
                 }else{
                     do{
                         history = "\nMenu de Ataque\n\n~Atacar~\n~Ataque Sônico~\n~Ataque de Gelo~\n\nOpção: ";
@@ -212,7 +259,7 @@ public class Main {
             //Dano na vida reduzido por conta da armadura(caso tenha)
             case "Denfender":
             case "denfender":
-                life -= (enemyDamage - armor);
+                life += heal;
                 break;
             //Tentativa de se esvair de suas obrigações
             case "Correr":
