@@ -211,7 +211,7 @@ public class Main {
                 acaoJogador();
 
                 if (acaoJogador.equalsIgnoreCase("olhar")){
-                    history = "A sala onde estou é ampla, existem escadas nas duas extremidades da sala, mas elas estão bloqueadas por caixas e móveis…\nNo centro da sala, há uma mesa com um objeto atípico, uma caixa trancada e com cabos que ligam em uma espécie de computador…\nTalvez eu possa interagir com o computador!";
+                    history = "A sala onde estou é ampla, existem escadas nas duas extremidades da sala, mas elas estão bloqueadas por caixas e móveis...\nNo centro da sala, há uma mesa com um objeto atípico, uma caixa trancada e com cabos que ligam em uma espécie de computador...\nTalvez eu possa interagir com o computador!";
                     texting(history, 35);
                 }else if(acaoJogador.equalsIgnoreCase("Frente")||acaoJogador.equalsIgnoreCase("Entrar")){
                     history = "Não há caminhos para seguir por aqui, posso apenas voltar.";
@@ -279,7 +279,7 @@ public class Main {
 
     //Quests desenvolvidas nas fases do jogo
     static void quest1() throws InterruptedException{
-        history = "\n\nOk, esse computador realmente é estranho.. parece que só há um ícone na tela e, nele diz, “revisão de segurança”... Que? não faz mais nada além de abrir esse aplicativo… Quem diabos iria querer um computador tão limitado quanto esse? \nBom… não me resta outra alternativa senão abrir o aplicativo.\nHmm, parece que só há uma pergunta… Vamos ver…";
+        history = "\n\nOk, esse computador realmente é estranho.. parece que só há um ícone na tela e, nele diz, REVISÃO DE SEGURANÇA... Que? não faz mais nada além de abrir esse aplicativo... Quem diabos iria querer um computador tão limitado quanto esse? \nBom... não me resta outra alternativa senão abrir o aplicativo.\nHmm, parece que só há uma pergunta... Vamos ver...";
         texting(history, 35);
         
         do{
@@ -323,7 +323,8 @@ public class Main {
     //Ações Quest
     static void acaoQuest() throws InterruptedException{
         history = "\n___________________________________________________________________________________\n\nEscreva uma das seguintes opções:\n\nA)                  B)\nC)                  D)\nSua resposta: ";
-    
+        texting(history, 5);
+        
         acaoQuest = input.next();
         tempo++;
     }
