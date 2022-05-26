@@ -4,8 +4,8 @@ import java.util.*;
 public class Main {
     //Declaração de variáveis
     static String optionMenu, optionGame, optionMenuAtk, history;
-    static boolean menu = true, play = false, menuAtk, sonicAtkS = false, frozenAtkS = false, enemyAtkS;
-    static int sleepTime, life, damage = 10, heal, cooldown, sonicAtk = 20, sonicAtkCD, frozenAtk = 10, frozenAtkCD, enemyLife, enemyDamage;
+    static boolean menu = true, play = false, menuAtk, sonicAtkS = false, frozenAtkS = false, enemyAtkS = false, faseIncompleta;
+    static int sleepTime, life, damage = 10, heal, cooldown, sonicAtk = 20, sonicAtkCD, frozenAtk = 10, frozenAtkCD, enemyLife, enemyDamage, areaCenario;
 
     //Instanciamento de objetos
     static Scanner input = new Scanner(System.in);
@@ -17,13 +17,10 @@ public class Main {
 
         //Inicialização do game
         while(play){
-            //Introdução
-            history = "\n\n~~TECH SYNC~~";
-            texting(history, 50);
+            selecFase();
 
             //Primeira fase
-            history = "\n\nAo acordar, deparei-me com um lugar estranho. Tudo parecia antigo e ultrapassado e apesar de parecer acabado,\nnão conseguia sentir dor nenhuma... Na verdade, não sentia nada, não conseguia sequer lembrar de onde vim,\ncomo apareci aqui e nem para onde eu tinha que ir. A única motivação que eu tinha parecia martelar por dentro\nda minha memória, como coordenadas que me levariam para algum lugar importante e, por instinto, decidi que\nseguiria o caminho designado.\n";
-            texting(history, 50);
+            selecFase();
 
             
             //Chamando o menu para que seja verificado se deseja jogar novamente ou encerrar o programa
@@ -31,7 +28,7 @@ public class Main {
         }
         
         //Fim
-        history = "\nObrigado por jogar :D\n";
+        history = "\nObrigado por jogar ^-^\n";
         texting(history, 50);
     }
 
@@ -110,6 +107,132 @@ public class Main {
         return play;
     }
 
+    
+    //Seleção de fases conforme progressão em jogo
+    static void selecFase() throws InterruptedException{
+        int atualFase;
+        
+        for (atualFase = 1; atualFase <= 10; atualFase ++){
+            areaCenario = 1;
+            faseIncompleta = true;
+            
+            switch(atualFase){
+                
+                case 1: 
+                fase1();
+                break;
+                case 2: 
+                fase2();
+                break;
+                case 3: 
+                fase3();
+                break;
+                case 4: 
+                fase4();
+                break;
+                case 5: 
+                fase5();
+                break;
+                /*
+                case 6: 
+                fase6();
+                break;
+                case 7: 
+                fase7();
+                break;
+                case 8: 
+                fase8();
+                break;
+                case 9:
+                fase9();
+                break;
+                case 10: 
+                fase10();
+                break;
+                */
+                
+            }
+            
+        }
+        
+    }
+
+    //Desenvolvimento das fases do jogo
+    static void fase1() throws InterruptedException{
+        history = "\n\n----------TECH SYNC----------\n\nAcordo em meio a um cenário estranho.\nO lugar onde estou sugere que eu caí de algum lugar alto. Mesmo assim, não sinto dor alguma… na verdade, não sinto nada… não consigo lembrar de onde vim e nem como vim parar aqui.\nO.. O que é isso? Algo parece martelar por dentro de minha memória… São como… coordenadas? Algo me diz que, o que quer que esteja nesse lugar, é importante.";
+        texting(history, 35);
+        
+        do{
+            switch(areaCenario){
+                case 1:
+                history = "\n\nEstou em um Jardim dos fundos de uma casa pequena, na minha frente a casa branca páira sobre a já escassa luz do fim de tarde.\nUma janela aberta é o único detalhe que pode ser contemplado em sua parede branca. Algo me diz que preciso ir por ela…\n\nSua ação: ";
+                texting(history, 35);
+                optionGame = input.next();
+
+                if(optionGame.equalsIgnoreCase("olhar")){
+                    history = "\nOs meus arredores de alguma forma remetem a um típico cenário do século passado… Na minha frente, a imponente casa em estilo vitoriano se estendia. Uma janela aberta é o único detalhe que pode ser contemplado em sua parede branca. \nJá na minha esquerda consigo ver um playground simples, com um escorregador e alguns brinquedos de criança soltos, também é possível ver uma porteira que parece levar para a casa de ferramentas. \nNa minha direita há um varal com roupas tremulando ao vento e também o que parece ser uma passagem pelos bosques.";
+                    texting(history, 35);
+                }else if(optionGame.equalsIgnoreCase("frente") || optionGame.equalsIgnoreCase("entrar") || optionGame.equalsIgnoreCase("janela")){
+
+                }
+
+                break;
+                case 2:
+                
+                break;
+            }
+            
+        }while(faseIncompleta);
+    
+    }
+    static void fase2() throws InterruptedException{
+        
+    
+    }
+    
+    static void fase3() throws InterruptedException{
+        
+    
+    }
+    
+    static void fase4() throws InterruptedException{
+        
+    
+    }
+    
+    static void fase5() throws InterruptedException{
+        
+    
+    }
+
+    static void fase6(){
+        
+    
+    }
+    
+    static void fase7(){
+        
+    
+    }
+    
+    static void fase8(){
+        
+    
+    }
+    
+    static void fase9(){
+        
+    
+    }
+    
+    static void fase10(){
+
+    
+    }
+
+
+    //Quests desenvolvidas nas fases do jogo
+    
     //Estatisticas do Player
     public static void Player(int life, int damage, int heal, int cooldown){
         if(sonicAtkCD == 0){
