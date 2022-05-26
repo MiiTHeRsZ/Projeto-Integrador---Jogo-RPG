@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Main {
     //Declaração de variáveis
-    static String optionMenu, optionGame, optionMenuAtk, history, acaoJogador;
+    static String optionMenu, optionGame, optionMenuAtk, history, acaoJogador, acaoQuest;
     static boolean menu = true, play = false, menuAtk, sonicAtkS = false, frozenAtkS = false, enemyAtkS = false, faseIncompleta, primEntrada;
-    static int sleepTime, life, damage = 10, heal, cooldown, sonicAtk = 20, sonicAtkCD, frozenAtk = 10, frozenAtkCD, enemyLife, enemyDamage, areaCenario;
+    static int tempo = 0, sleepTime, life, damage = 10, heal, cooldown, sonicAtk = 20, sonicAtkCD, frozenAtk = 10, frozenAtkCD, enemyLife, enemyDamage, areaCenario;
 
     //Instanciamento de objetos
     static Scanner input = new Scanner(System.in);
@@ -124,6 +124,7 @@ public class Main {
                 case 1: 
                 fase1();
                 faseIncompleta =true;
+                primEntrada = true;
                 quest1();
                 break;
                 case 2: 
@@ -277,22 +278,66 @@ public class Main {
     }
 
     //Quests desenvolvidas nas fases do jogo
-    static void quest1(){
+    static void quest1() throws InterruptedException{
+        history = "\n\nOk, esse computador realmente é estranho.. parece que só há um ícone na tela e, nele diz, “revisão de segurança”... Que? não faz mais nada além de abrir esse aplicativo… Quem diabos iria querer um computador tão limitado quanto esse? \nBom… não me resta outra alternativa senão abrir o aplicativo.\nHmm, parece que só há uma pergunta… Vamos ver…";
+        texting(history, 35);
+        
+        do{
+            //Questionário: A alternativa correta é a C.
+            history = "\n\n\sQual a principal função da memória secundária?\n\nA) Alocar informações antes de enviá-las ao processador ou à uma unidade de armazenamento.\nB) Armazenar informações que são utilizadas com frequência para agilizar processos repetitivos.\nC) Armazenar massas de dados diversificados de maneira não volátil, para usos posteriores.\nD) Ser utilizada como uma espécie de backup da memória principal, já que é mais fácil trocar para memória secundária do que recarregar a principal.";
+            texting(history, 5);
+            
+            if(primEntrada = true){
+                history = "\n\nAAHH, essa sensação estranha na cabeça de novo... algo... algo me diz que eu não posso ficar perdendo... tempo? Como assim? \nBom, é melhor responder logo e não ficar errado atoa...";
+                texting(history, 35);
+                primEntrada = false;
+            }
+
+            acaoQuest();
+
+            if(acaoQuest.equalsIgnoreCase("A")){
+
+            }else if(acaoQuest.equalsIgnoreCase("B")){
+
+            }else if(acaoQuest.equalsIgnoreCase("C")){ //CORRETA
+
+            }else if(acaoQuest.equalsIgnoreCase("D")){
+
+            }else{
+
+            }
+
+        }while(faseIncompleta);
+
 
     }
     
     //Ações do jogador
     static void acaoJogador() throws InterruptedException{
-        history = "\n___________________________________________________________________________________\n\nEscreva uma das seguintes opções:\n\nOlhar - Descreve mais detalhadamente os arredores.\nFrente ou Entrar ou Nome da Passagem - Avança para próxima tela.\nInteragir - No segundo cenário, incia a quest.\nVoltar - Se possível, volta para tela anterior.\n\nTambém é possível interagir com alguns objetos escrevendo o nome deles\n\nSua ação: ";
+        history = "\n___________________________________________________________________________________\n\nEscreva uma das seguintes opções:\n\nOlhar - Descreve mais detalhadamente os arredores.\nFrente ou Entrar ou Nome da Passagem - Avança para próxima tela.\nInteragir - No segundo cenário, incia a quest.\nVoltar - Se possível, volta para tela anterior.\n\nTambém é possível interagir com alguns objetos escrevendo o nome deles!\n\nSua ação: ";
         texting(history, 5);
         
         acaoJogador = input.next();
+        tempo++;
     }
-    //Ação inválida
+    //Ações Quest
+    static void acaoQuest() throws InterruptedException{
+        history = "\n___________________________________________________________________________________\n\nEscreva uma das seguintes opções:\n\nA)                  B)\nC)                  D)\nSua resposta: ";
+    
+        acaoQuest = input.next();
+        tempo++;
+    }
+
+    //Ação inválida.
     static void acaoInvalida() throws InterruptedException{
         history = "\n\nNão reconheço nenhuma opção válida para esta entrada, tente seguir uma das instruções";
         texting(history, 20);
     }
+    //Caminho inválido.
+
+
+    //Interação inválida.
+
 
     //Estatisticas do Player
     public static void Player(int life, int damage, int heal, int cooldown){
