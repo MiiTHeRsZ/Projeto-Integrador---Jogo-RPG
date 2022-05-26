@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     //Declaração de variáveis
     static String optionMenu, optionGame, optionMenuAtk, history;
-    static boolean menu = true, play = false, menuAtk, sonicAtkS = false, frozenAtkS = false, enemyAtkS = false, faseIncompleta;
+    static boolean menu = true, play = false, menuAtk, sonicAtkS = false, frozenAtkS = false, enemyAtkS = false, faseIncompleta, primEntrada;
     static int sleepTime, life, damage = 10, heal, cooldown, sonicAtk = 20, sonicAtkCD, frozenAtk = 10, frozenAtkCD, enemyLife, enemyDamage, areaCenario;
 
     //Instanciamento de objetos
@@ -35,11 +35,11 @@ public class Main {
     //Menu
     public static boolean Menu() throws InterruptedException {
         //Inicio do jogo
-        history = "Bem vindo ao Tech Sync\nJogo RPG Textual hambientado em um mundo futurista\n\n*INSTRUÇÃO para uso geral, ao escolher a opção desejada ignore qualquer acentuação, por exemplo,\nem 'Instruções' escreva 'intrucoes'!*\n";
-        texting(history, 35);
+        history = "Bem vindo ao Tech Sync\nJogo RPG Textual ambientado em um mundo futurista\n\n*INSTRUÇÃO para uso geral, ao escolher a opção desejada ignore qualquer acentuação, por exemplo,\nem 'Instruções' escreva 'intrucoes'!*\n";
+        texting(history, 20);
         do{
-            history = "\n    MENU\n---Jogar---\n--Tutorial--\n--Créditos--\n---Sair---\nOpção: ";
-            texting(history, 35);
+            history = "\n    MENU\n--- Jogar---\n--Tutorial--\n--Créditos--\n----Sair----\n\nOpção: ";
+            texting(history, 20);
             optionMenu = input.next();
 
             switch(optionMenu){
@@ -74,7 +74,7 @@ public class Main {
                 //Responsáveis pelo projeto
                 case "Creditos":
                 case "creditos":
-                    history = "\n~Le pika/DEV: Gusta;p\n~Le DEV/Writer: Lucky*_*\n";
+                    history = "\n~Le pika/DEV: Gusta ;p\n~Le Writer/DEV: Lucky >..<\n";
                     texting(history, 35);
                     do{
                         history = "\nDeseja voltar ao Menu? ";
@@ -159,25 +159,40 @@ public class Main {
 
     //Desenvolvimento das fases do jogo
     static void fase1() throws InterruptedException{
-        history = "\n\n----------TECH SYNC----------\n\nAcordo em meio a um cenário estranho.\nO lugar onde estou sugere que eu caí de algum lugar alto. Mesmo assim, não sinto dor alguma… na verdade, não sinto nada… não consigo lembrar de onde vim e nem como vim parar aqui.\nO.. O que é isso? Algo parece martelar por dentro de minha memória… São como… coordenadas? Algo me diz que, o que quer que esteja nesse lugar, é importante.";
+        primEntrada = true;
+
+        history = "\n\n----------TECH SYNC----------\n\nAcordo em meio a um cenário estranho.\nO lugar onde estou sugere que eu caí de algum lugar alto. Mesmo assim, não sinto dor alguma... na verdade, não sinto nada... não consigo lembrar de onde vim e nem como vim parar aqui.\nO.. O que é isso? Algo parece martelar por dentro de minha memória... São como... coordenadas? Algo me diz que, o que quer que esteja nesse lugar, é importante.";
         texting(history, 35);
-        
         do{
             switch(areaCenario){
                 case 1:
-                history = "\n\nEstou em um Jardim dos fundos de uma casa pequena, na minha frente a casa branca páira sobre a já escassa luz do fim de tarde.\nUma janela aberta é o único detalhe que pode ser contemplado em sua parede branca. Algo me diz que preciso ir por ela…\n\nSua ação: ";
-                texting(history, 35);
+                if(primEntrada){
+                    history = "\n\nEstou em um Jardim dos fundos de uma casa pequena, na minha frente a casa branca páira sobre a já escassa luz do fim de tarde.\nUma janela aberta é o único detalhe que pode ser contemplado em sua parede branca. Algo me diz que preciso ir por ela...";
+                    texting(history, 35);
+                    primEntrada = false;
+                }
+                
+                history = "\n\nSua ação: ";
+                texting(history, 20);
                 optionGame = input.next();
-
+                
                 if(optionGame.equalsIgnoreCase("olhar")){
-                    history = "\nOs meus arredores de alguma forma remetem a um típico cenário do século passado… Na minha frente, a imponente casa em estilo vitoriano se estendia. Uma janela aberta é o único detalhe que pode ser contemplado em sua parede branca. \nJá na minha esquerda consigo ver um playground simples, com um escorregador e alguns brinquedos de criança soltos, também é possível ver uma porteira que parece levar para a casa de ferramentas. \nNa minha direita há um varal com roupas tremulando ao vento e também o que parece ser uma passagem pelos bosques.";
+                    history = "\nOs meus arredores de alguma forma remetem a um típico cenário do século passado... Na minha frente, a imponente casa em estilo vitoriano se estendia. Uma janela aberta é o único detalhe que pode ser contemplado em sua parede branca. \nJá na minha esquerda consigo ver um playground simples, com um escorregador e alguns brinquedos de criança soltos, também é possível ver uma porteira que parece levar para a casa de ferramentas. \nNa minha direita há um varal com roupas tremulando ao vento e também o que parece ser uma passagem pelos bosques.";
                     texting(history, 35);
                 }else if(optionGame.equalsIgnoreCase("frente") || optionGame.equalsIgnoreCase("entrar") || optionGame.equalsIgnoreCase("janela")){
-
+                    areaCenario = 2;
+                    primEntrada = true;
+                }else{
+                    history = "\n\nOpção inválida";
+                    texting(history, 20);
                 }
-
                 break;
                 case 2:
+                if (primEntrada){
+                    history = "\n\nPulo pela janela que estava aberta, a sala onde estou é ampla, existem escadas nas duas extremidades da sala, mas elas estão bloqueadas por caixas e móveis... Ao que tudo indica, uma família acabou de se mudar para cá, ainda assim, eu estranhamente tenho certeza de que não encontrarei ninguém nestas salas...\nNo centro da sala, há uma mesa com um objeto atípico, uma caixa trancada e com cabos que ligam em uma espécie de computador... Tudo naqueles objetos parecem destoar no tempo, como se não pertencessem àquele lugar.";
+                    texting(history, 35);
+                    primEntrada = false;
+                }
                 
                 break;
             }
