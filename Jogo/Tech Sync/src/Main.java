@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
     //Declaração de variáveis
-    static String optionMenu, optionGame, optionMenuAtk, history;
+    static String optionMenu, optionGame, optionMenuAtk, history, acaoJogador;
     static boolean menu = true, play = false, menuAtk, sonicAtkS = false, frozenAtkS = false, enemyAtkS = false, faseIncompleta, primEntrada;
     static int sleepTime, life, damage = 10, heal, cooldown, sonicAtk = 20, sonicAtkCD, frozenAtk = 10, frozenAtkCD, enemyLife, enemyDamage, areaCenario;
 
@@ -123,6 +123,8 @@ public class Main {
                 
                 case 1: 
                 fase1();
+                faseIncompleta =true;
+                quest1();
                 break;
                 case 2: 
                 fase2();
@@ -175,28 +177,54 @@ public class Main {
                     primEntrada = false;
                 }
                 
-                history = "\n\nSua ação: ";
-                texting(history, 20);
-                optionGame = input.next();
+                acaoJogador();
                 
-                if(optionGame.equalsIgnoreCase("olhar")){
+                if(acaoJogador.equalsIgnoreCase("olhar")){
                     history = "\nOs meus arredores de alguma forma remetem a um típico cenário do século passado... Na minha frente, a imponente casa em estilo vitoriano se estendia. Uma janela aberta é o único detalhe que pode ser contemplado em sua parede branca. \nJá na minha esquerda consigo ver um playground simples, com um escorregador e alguns brinquedos de criança soltos, também é possível ver uma porteira que parece levar para a casa de ferramentas. \nNa minha direita há um varal com roupas tremulando ao vento e também o que parece ser uma passagem pelos bosques.";
                     texting(history, 35);
-                }else if(optionGame.equalsIgnoreCase("frente") || optionGame.equalsIgnoreCase("entrar") || optionGame.equalsIgnoreCase("janela")){
+                }else if(acaoJogador.equalsIgnoreCase("frente") || acaoJogador.equalsIgnoreCase("entrar") || acaoJogador.equalsIgnoreCase("janela")){
                     areaCenario = 2;
                     primEntrada = true;
+                }else if(acaoJogador.equalsIgnoreCase("Interagir")){
+                    history = "\nNão há nada para interagir aqui.";
+                    texting(history, 35);
+                }else if(acaoJogador.equalsIgnoreCase("voltar")){
+                    history = "\nAtrás de mim há apenas a mini cratera formada pelo minha queda. Fora isto, não há nada de interessante aqui.";
+                    texting(history, 35);
+                }else if(acaoJogador.equalsIgnoreCase("brinquedos")||acaoJogador.equalsIgnoreCase("brinquedo")||acaoJogador.equalsIgnoreCase("escorregador")){
+                    //Sistema de dicas como recompensa para exploração do cenário. Só estará presente na primeira fase como teste. Se possível, será adicionado um esquema de inventário onde, ao escrever "bilhete", a mensagem do mesmo seja imprimida.
+                    history = "\nOs brinquedos estão largados bem ao lado do escorregador. Parece que, seja lá quem esteve aqui, teve que sair às pressas... \n\nEntre as brinquedos há um papel, nele está escrito:\nUm HD serve para Armazenar massas de dados diversificados de maneira não volátil, para usos posteriores.\nPor que este bilhete está aqui, e para que foi escrito?";
+                    texting(history, 35);
                 }else{
-                    history = "\n\nOpção inválida";
-                    texting(history, 20);
+                    acaoInvalida();
                 }
                 break;
+
                 case 2:
                 if (primEntrada){
                     history = "\n\nPulo pela janela que estava aberta, a sala onde estou é ampla, existem escadas nas duas extremidades da sala, mas elas estão bloqueadas por caixas e móveis... Ao que tudo indica, uma família acabou de se mudar para cá, ainda assim, eu estranhamente tenho certeza de que não encontrarei ninguém nestas salas...\nNo centro da sala, há uma mesa com um objeto atípico, uma caixa trancada e com cabos que ligam em uma espécie de computador... Tudo naqueles objetos parecem destoar no tempo, como se não pertencessem àquele lugar.";
                     texting(history, 35);
                     primEntrada = false;
                 }
-                
+
+                acaoJogador();
+
+                if (acaoJogador.equalsIgnoreCase("olhar")){
+                    history = "A sala onde estou é ampla, existem escadas nas duas extremidades da sala, mas elas estão bloqueadas por caixas e móveis…\nNo centro da sala, há uma mesa com um objeto atípico, uma caixa trancada e com cabos que ligam em uma espécie de computador…\nTalvez eu possa interagir com o computador!";
+                    texting(history, 35);
+                }else if(acaoJogador.equalsIgnoreCase("Frente")||acaoJogador.equalsIgnoreCase("Entrar")){
+                    history = "Não há caminhos para seguir por aqui, posso apenas voltar.";
+                    texting(history, 35);
+                }else if(acaoJogador.equalsIgnoreCase("Computador")||acaoJogador.equalsIgnoreCase("Caixa")||acaoJogador.equals("Interagir")){
+                    faseIncompleta = false;
+                }else if(acaoJogador.equalsIgnoreCase("Voltar")){
+                    history = "Volto pelo janela de onde vim...";
+                    texting(history, 35);
+                    areaCenario = 1;
+                    primEntrada = true;
+                }else{
+                    acaoInvalida();
+                }
                 break;
             }
             
@@ -248,9 +276,24 @@ public class Main {
     
     }
 
-
     //Quests desenvolvidas nas fases do jogo
+    static void quest1(){
+
+    }
     
+    //Ações do jogador
+    static void acaoJogador() throws InterruptedException{
+        history = "\n___________________________________________________________________________________\n\nEscreva uma das seguintes opções:\n\nOlhar - Descreve mais detalhadamente os arredores.\nFrente ou Entrar ou Nome da Passagem - Avança para próxima tela.\nInteragir - No segundo cenário, incia a quest.\nVoltar - Se possível, volta para tela anterior.\n\nTambém é possível interagir com alguns objetos escrevendo o nome deles\n\nSua ação: ";
+        texting(history, 5);
+        
+        acaoJogador = input.next();
+    }
+    //Ação inválida
+    static void acaoInvalida() throws InterruptedException{
+        history = "\n\nNão reconheço nenhuma opção válida para esta entrada, tente seguir uma das instruções";
+        texting(history, 20);
+    }
+
     //Estatisticas do Player
     public static void Player(int life, int damage, int heal, int cooldown){
         if(sonicAtkCD == 0){
