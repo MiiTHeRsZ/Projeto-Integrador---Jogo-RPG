@@ -293,7 +293,7 @@ public class Main {
         
         do{
             //Questionário: A alternativa correta é a C.
-            history = "\n\n\sQual a principal função da memória secundária?\n\nA) Alocar informações antes de enviá-las ao processador ou à uma unidade de armazenamento.\nB) Armazenar informações que são utilizadas com frequência para agilizar processos repetitivos.\nC) Armazenar massas de dados diversificados de maneira não volátil, para usos posteriores.\nD) Ser utilizada como uma espécie de backup da memória principal, já que é mais fácil trocar para memória secundária do que recarregar a principal.";
+            history = "\n\nQual a principal função da memória secundária?\n\nA) Alocar informações antes de enviá-las ao processador ou à uma unidade de armazenamento.\nB) Armazenar informações que são utilizadas com frequência para agilizar processos repetitivos.\nC) Armazenar massas de dados diversificados de maneira não volátil, para usos posteriores.\nD) Ser utilizada como uma espécie de backup da memória principal, já que é mais fácil trocar para memória secundária do que recarregar a principal.";
             texting(history, 5);
             
             if(primEntrada){
@@ -364,8 +364,8 @@ public class Main {
     }
     //Ações Quest
     static void acaoQuest() throws InterruptedException{
-        System.out.println("\n___________________________________________________________________________________________________________________________________________________________________________________________________");
-        history = "\n\nEscreva uma das seguintes opções:\n\nA)\nB)\nC)\nD)\n\nSua resposta: ";
+        //System.out.println("\n___________________________________________________________________________________________________________________________________________________________________________________________________");
+        history = "Sua resposta: ";
         texting(history, 5);
         
         acaoQuest = input.next();
