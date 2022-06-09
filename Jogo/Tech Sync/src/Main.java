@@ -260,7 +260,7 @@ public class Main {
                         history = "\nAtrás de mim há apenas a mini cratera formada pelo minha queda. Fora isto, não há nada de interessante aqui.";
                         texting(history, 35);
                     }else if(acaoJogador.equalsIgnoreCase("brinquedos")||acaoJogador.equalsIgnoreCase("brinquedo")||acaoJogador.equalsIgnoreCase("escorregador")){
-                        history = "\nOs brinquedos estão largados bem ao lado do escorregador. Parece que, seja lá quem esteve aqui, teve que sair às pressas... \n\nEntre as brinquedos há um papel, nele está escrito:\nUm HD serve para Armazenar massas de dados diversificados de maneira não volátil, para usos posteriores.\nPor que este bilhete está aqui, e para que foi escrito?";
+                        history = "\nOs brinquedos estão largados bem ao lado do escorregador. Parece que, seja lá quem esteve aqui, teve que sair às pressas... \n\nEntre as brinquedos há um papel, nele está escrito:\nMemórias secundárias são dispositivos com grandes capacidades de armazenamento, utilizadas para guardar dados de maneira a permanecerem no dispositivo mesmo após o interrompimento no fornecimento de energia.\nPor que este bilhete está aqui, e para que foi escrito?";
                         texting(history, 35);
                     }else{
                         acaoInvalida();
@@ -300,7 +300,7 @@ public class Main {
     static void fase2() throws InterruptedException{
         primEntrada = true;
 
-        history = "\n\nApós conectar o HD junto ao computador, sinto que algo me puxou com muita força para dentro do meu peito em uma espécie de espiral estranha. Sem perceber, tudo ao meu redor mudava aos poucos, e eu sentia como se o tempo passasse bem entre os meus dedos, ainda assim, o lugar onde estou de alguma forma ainda parece o mesmo.\n\nA sensação de dever a cumprir, por outro lado, não sumiu... Uma sensação amarga e estranha  que continua martelando em algum lugar dentro da minha memória... \n\nDe alguma forma sinto que há alguém tentando se comunicar comigo...";
+        history = "\n\nApós conectar o HD junto ao computador, sinto que algo me puxou com muita força para dentro do meu peito em uma espécie de espiral estranha. Uma voz estranha começou a falar em minha cabeça \nParabéns, primeiro bloco de memória recuperado com sucesso, faltam aproximadamente\n...................\n9 blocos de memóra, continue com o bom trabalho.\nNão entendia o que aquilo tudo significava, mas não tive muito tempo para pensar sobre isso. \nEnquanto eu ouvia a voz, sem perceber, tudo ao meu redor mudava aos poucos, e eu sentia como se o tempo passasse bem entre os meus dedos, ainda assim, o lugar onde estou de alguma forma ainda parece o mesmo.\n\nA sensação de dever a cumprir, por outro lado, não sumiu... Uma sensação amarga e estranha  que continua martelando em algum lugar dentro da minha memória... \n\nDe alguma forma sinto que há alguém tentando se comunicar comigo...";
         texting(history, 35);
         do{
             switch(areaCenario){
@@ -328,7 +328,7 @@ public class Main {
                         history = "\nAtrás de mim há apenas a mini cratera formada pelo minha queda, agora ela dá forma a um mini lago com alguns peixinhos. Fora isto, não há nada de interessante aqui.";
                         texting(history, 35);
                     }else if(acaoJogador.equalsIgnoreCase("roupas")||acaoJogador.equalsIgnoreCase("roupa")||acaoJogador.equalsIgnoreCase("varal")){
-                        history = "\nAs roupas já estão secas, seja lá quem às deixou aqui, já deve fazer algum tempo. \n\nNo bolso de uma das roupas há um papel um pouco enrrugado, deve ter secado junto com as roupas. Nele está escrito: \nMemórias secundárias são dispositivos com grandes capacidades de armazenamento, utilizadas para guardar dados de maneira a permanecerem no dispositivo mesmo após o interrompimento no fornecimento de energia.\nPor que este bilhete está aqui, e para que foi escrito?";
+                        history = "\nAs roupas já estão secas, seja lá quem às deixou aqui, já deixou faz algum tempo. \n\nNo bolso de uma das roupas há um papel um pouco enrrugado, deve ter secado junto com as roupas. Nele está escrito: \nMemórias secundárias são dispositivos com grandes capacidades de armazenamento, utilizadas para guardar dados de maneira a permanecerem no dispositivo mesmo após o interrompimento no fornecimento de energia.\nPor que este bilhete está aqui, e para que foi escrito?";
                         texting(history, 35);
                     }else{
                         acaoInvalida();
@@ -369,7 +369,7 @@ public class Main {
     static void fase3() throws InterruptedException{ //BOSS FIGHT
         do{
             //TEXTO DE INTRODUÇÃO DO CENÁRIO.
-            history = "\n\nO tempo ao meu redor parece dobrar novamente e sinto que sou puxado para algo dentro de meu peito. O passar das estações e as mudanças climáticas passam diante dos meus olhos em cenários sempre distintos.\nMais uma vez, me encontro em um lugar estranho, meus sentidos e motivos parecem mais claros… De alguma forma sei que tenho uma missão a cumprir, sei que alguém ainda tenta se comunicar comigo…";
+            history = "\n\nFoi só apertar o botão que aconteceu novamente... O tempo ao meu redor dobrando por mais uma vez, sinto que sou puxado para algo dentro de meu peito. O passar das estações e as mudanças climáticas passam diante dos meus olhos em cenários sempre distintos.\nMais uma vez, me encontro em um lugar estranho, meus sentidos e motivos parecem mais claros… De alguma forma sei que tenho uma missão a cumprir, sei que alguém ainda tenta se comunicar comigo…";
             texting(history, 35);
             history = "\n\nOk, estou dentro da casa branca novamente. Próximo de mim parece haver um dispositivo de comunicação semelhante a um headset, junto a ele, o mesmo computador de sempre está disposto em uma mesa de centro... Hmm, isso está fácil demais - Começo a caminhar em direção ao computador - Definitivamente algo não está certo.. o clima está pesado demais e.. parando pra pensar alguns detalhes ao meu redor não fazem sentido.. Por que há ferramentas espalhadas pela sala? Espera um pouco… elas estão se movendo? Mas que porcaria, eu não tenho tempo pra perder com esse tipo de alucinação, preciso sair logo desse lugar.. - chego perto da mesa de centro, ao interagir com o dispositivo de comunicação, UM VOID EM ESPIRAL surge bem em minha frente, colocando-se entre mim e o headset, me afasto instintivamente para me proteger e nesse momento percebo: Há agora uma espécie de máquina antropomórfica bem em minha frente. Seu semblante por si só é de dar calafrios.";
             texting(history, 10);
@@ -394,8 +394,75 @@ public class Main {
     }
     
     static void fase4() throws InterruptedException{
-        do{
+        primEntrada = true;
 
+        history = "\n\nDessa vez, o passar do tempo me pareceu diferente, demorei para processar mas, antes de ser puxado por mais uma vez, de relance pude ver a maldita máquina ainda de pé. Após isso, foi como apagar e passar por um mutirão de luzes vermelhas que piscam por todos os lados. Quando as coisas ao meu redor pararam de mudar, pude reparar uma voz dentro da minha cabeça, era a mesma de antes.";
+        texting(history, 35);
+        history = "\nRelatório de Danos: Componentes primordiais da placa principal danificados, núcleo de retaguarda atingido, procedimento recomendado: substituição de componentes. O mapa temporal aponta um equipamento compatível nesta época. Marcando coordenadas.";
+        texting(history, 20);
+        history = "\nPELOS DEUSES - uma segunda voz, dessa vez bem familiar, ecoou pela minha cabeça - O que diabos aconteceu contigo ZC-T2? E “quando” é este lugar onde você está?... - Por mais que a voz me pareça familiar, não consigo lembrar da imagem desse homem, só sei que deve ser alguém importante para mim - Hmmm... Deixe-me pensar… Acho que entendi, os relatórios em tempo real acabaram de ser atualizados... Parece que o maldito SyncWare pode te encontrar mesmo através das barreiras do tempo… Ok, sem pânico, os protocolos de segurança já te direcionaram para um momento apropriado da história, tudo que você precisa fazer é buscar aquele bloco de memória e usar as peças que encontrar no meio do caminho para reparar os seus danos, justamente como está descrito nos protocolos de emergência. - O homem disse com um leve peso em sua voz - Por favor ZC-T2, eu sei que você não é capaz de entender minhas súplicas, mas lembre-se da import..... - A voz é abruptamente interrompida, meus sentidos estão cada vez mais atordoados, tenho que continuar seguindo em frente...";
+        texting(history, 35);
+
+        do{
+            switch(areaCenario){
+
+                //CENÁRIO DE SPAWN
+                case 1:
+                    if(primEntrada){
+                        history = "\n\nOlho ao meu redor, o lugar onde estou de alguma maneira me remete a sala onde eu consegui o HD... Hmm... Na veradede, de fato é a mesma sala onde eu o peguei. Só que está diferente… \nAgora não há mais um computador estranho no meio da sala, e uma bela mobília dá vida a cada canto do lugar.\nAs escadas, agora livres de bloqueio, arqueiam pela sala e, ao que tudo indica, levam a um ponto comum no andar superior. Consigo sentir que lá há algo que eu preciso obter.";
+                        texting(history, 35);
+                        primEntrada = false;
+                    }
+                    
+                    acaoJogador();
+                    
+                    System.out.println("___________________________________________________________________________________________________________________________________________________________________________________________________");
+                    if(acaoJogador.equalsIgnoreCase("olhar")){
+                        history = "\nUma lareira pode ser vista ao final da sala, há algumas poltronas vermelhas em seu entorno dando um ar gótico à sala. No lugar onde anteriormente estava o computador, agora há uma mesa redonda de vidro com várias cadeiras luxuosas dispostas ao seu redor. Também há alguns armários e gaveteiros espalhados pela sala, entre todos eles, um me chama a atenção devido a uma espécie de fotografia.\nAs escadas, agora livres de bloqueio, arqueiam pela sala e, ao que tudo indica, levam a um ponto comum no andar superior. Consigo sentir que lá há algo que eu preciso obter.";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("frente") || acaoJogador.equalsIgnoreCase("subir") || acaoJogador.equalsIgnoreCase("escada") || acaoJogador.equalsIgnoreCase("escadaria") || acaoJogador.equalsIgnoreCase("escadas")){
+                        areaCenario = 2;
+                        primEntrada = true;
+                    }else if(acaoJogador.equalsIgnoreCase("Interagir")){
+                        interacaoInvalida();
+                    }else if(acaoJogador.equalsIgnoreCase("voltar")){
+                        history = "\nAtrás de mim deveria haver uma janela que levaria de volta ao jardim, entretanto, no lugar disso tudo que há é uma parede. A janela deve ter sido removida junto da reforma. De qualquer forma, preciso encontrar outro caminho...";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("roupas")||acaoJogador.equalsIgnoreCase("roupa")||acaoJogador.equalsIgnoreCase("varal")){
+                        history = "\nAo pegar a fotografia, vejo um alvo homem com seus aproximadamente 60 anos. Os cabelos brancos deixam bem nítido o quanto o tempo o marcou… Do seu lado, há um rapaz na flor de seus 20 e poucos anos que claramente não queria estar naquela foto..\nNa parte de trás do quadro, consigo ver um papel dobrado. Nele está escrito: \nA placa-mãe é o dispositivo encarregado de fazer a interação dos hardwares entre si, sem ela não teriam como trocar informações para que pudessem funcionar em conjunto.\nPor que este bilhete está aqui, e para que foi escrito?";
+                        texting(history, 35);
+                    }else{
+                        acaoInvalida();
+                    }
+                break;
+
+                //CENÁRIO DA MISSÃO PRINCIPAL
+                case 2:
+                    if (primEntrada){
+                        history = "\n\nAo subir as escadas, percebo o quão grande é a magnitude dessa casa, uma sala extensa se desenrola em minha frente como um domo, vejo uma espécie de biblioteca tomando conta de todas as partes, seja lá quem vive aqui, certamente é uma pessoa muito estudiosa\nNão me surpreende mais o fato de encontrar este computador estranho pelas salas dessa... digamos... jornada. Só me incomoda o quanto ele parece distópico em relação a todo o resto do ambiente...\nDessa vez ele se encontra no meio da sala, no ponto central que dá origem ao domo redondo que é a sala, a caixa estranha com fios conectados continua lá, e eu sei que ela guarda exatamente o que eu preciso para reparar o dano que sofri.";
+                        texting(history, 35);
+                        primEntrada = false;
+                    }
+
+                    acaoJogador();
+
+                    if (acaoJogador.equalsIgnoreCase("olhar")){
+                        history = "A bíblioteca tem proporções absurdas, há tantos livros aqui que provavelmente um só humano não conseguiria ler em uma vida. \nO formato circular da sala favorece a impressão de que, não importa para onde você olhe, sempre há uma sessão diferente para descobrir com centenas de livros. O computador estranho está localizado no centro dessa sala, no ponto X da redoma, sei que preciso ir até ele me reparar e, principalmente, para avançar na minha jornada.";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("Frente")||acaoJogador.equalsIgnoreCase("Entrar")){
+                        caminhoInvalido();
+                    }else if(acaoJogador.equalsIgnoreCase("Computador")||acaoJogador.equalsIgnoreCase("Caixa")||acaoJogador.equalsIgnoreCase("Interagir")){
+                        faseIncompleta = false;
+                    }else if(acaoJogador.equalsIgnoreCase("Voltar")){
+                        voltaCaminho();
+                        areaCenario = 1;
+                        primEntrada = true;
+                    }else{
+                        acaoInvalida();
+                    }
+                break;
+            }
+            
         }while(faseIncompleta);
 
     }
@@ -486,11 +553,10 @@ public class Main {
             }else if(acaoQuest.equalsIgnoreCase("C")){ //CORRETA
                 history = "\n\nAAAH, A CAIXA ABRIU!!!";
                 texting(history, 10);
-                history = "\nPor que esse treco abriu tão violentamente? Eu tomei um susto!\nEnfim, o que temos aqui???\nUm HD? Hmm... A entrada é exatamente a mesma do computador, será que eu deveria conect";
+                history = "\nPor que esse treco abriu tão violentamente? Eu tomei um susto!\nEnfim, o que temos aqui???\nUm HD? Hmm... A entrada é exatamente a mesma do computador, será que eu deveria conecta-lo? Essa intuição estranha continua me dizendo o que fazer, não consigo entender as coisas que estão acontecendo ao meu redor e isso está me deixando LOUCO!\n......\nBom, se há alguma forma de continuar deve ser conectando esse HD no comput..";
                 texting(history, 35);
                 history = ".......";
                 texting(history, 80);
-
                 faseIncompleta = false;
             }else{
                 questInvalida();
@@ -521,7 +587,7 @@ public class Main {
             }else if(acaoQuest.equalsIgnoreCase("A")){ //CORRETA
                 history = "\n\nAAAH, A CAIXA ABRIU!!!";
                 texting(history, 10);
-                history = "\nPORQUE TEM QUE SER SEMPRE TÃO BARULHENTO???\n....Enfim, o que temos aqui???\nUma Placa de Rede? Hmm... Parece que, da mesma forma que antes, um equipamento foi disponibilizado de acordo com o que estava escrito no questionário...\nBom, vejamos bem, o que eu deveria fazer com... - No momento em que eu encosto na placa de rede, uma voz estranha começa a falar em minha cabeça.";
+                history = "\nPORQUE TEM QUE SER SEMPRE TÃO BARULHENTO???\n....Enfim, o computador parece ter a mesma entrada de antes, vou conectar o HD.\nParabéns, segundo bloco de memória recuperado com sucesso, faltam aproximadamente\n...................\n8 blocos de memóra, continue com o bom trabalho.\nEssa voz estranha mais uma vez... bom, e na caixa? deixe-me ver.....\nUma Placa de Rede? Hmm... Parece que, da mesma forma que antes, um equipamento foi disponibilizado de acordo com o que estava escrito no questionário...\nBom, vejamos bem, o que eu deveria fazer com... - No momento em que eu encosto na placa de rede, uma voz estranha começa a falar em minha cabeça.";
                 texting(history, 35);
                 history = " - RELATORIO DE INSTALAÇÃO, INICIAR - ACLOPE O EQUIPAMENTO NA UNIDADE CENTRAL DO SEU BRAÇO ESQUERDO, EM SEGUIDA, PRESSIONE O BOTÃO AZUL AO LADO DO ENCAIXE PARA FINALIZAR A INSTALAÇÃO";
                 texting(history, 20);                
@@ -538,7 +604,7 @@ public class Main {
     //COMBATE NO LUGAR DA TERCEIRA QUEST
 
     static void quest4() throws InterruptedException{
-        /*§§§§§*/history = "\n\nOk, esse computador realmente é estranho.. parece que só há um ícone na tela e, nele diz, REVISÃO DE SEGURANÇA... \nQue? não faz mais nada além de abrir esse aplicativo... Quem diabos iria querer um computador tão limitado quanto esse? \nBom... não me resta outra alternativa senão abrir o aplicativo.\nHmm, parece que só há uma pergunta... Vamos ver...";
+        history = "\n\nCerto, vamos lá... REVISÃO DE SEGURANÇA... Como eu imaginei, o mesmo aplicativo de novo\nBom... como sempre, vou abrir o aplicativo.\nHmm, qual será a questão dessa vez... Vamos ver...";
         texting(history, 35);
         corretoQuest = "B";
         
@@ -560,10 +626,14 @@ public class Main {
             }else if(acaoQuest.equalsIgnoreCase("B")){ //CORRETA
                 history = "\n\nAAAH, A CAIXA ABRIU!!!";
                 texting(history, 10);
-                /*§§§§§*/history = "\nPor que esse treco abriu tão violentamente? Eu tomei um susto!\nEnfim, o que temos aqui???\nUm HD? Hmm... A entrada é exatamente a mesma do computador, será que eu deveria conect";
+                history = "\nNÃO ACREDITO QUE EU CONTINUO TOMANDO SUSTO MESMO JÁ SABENDO O QUE VAI ACONTECER!\nEnfim, o que temos aqui???\nUma placa mãe.. exatamente o que eu imaginava, bom preciso consultar o relatório de danos de novo, como posso reparar esse tipo de... bom, como eu chamo isso? Ferimento?\n...\nENFIM, ativar instruções de reparo!!";
                 texting(history, 35);
+                history = "\nANÁLISE DE DANOS ATUALIZADA, SOLTANDO MÓDULOS DANIFICADOS, APROXIME A PLACA DA UNIDADE TRASEIRA, OS MICROROBOS DE REPARO CUIDARÃO DO RESTO.";
+                texting(history, 20);
                 history = ".......";
                 texting(history, 80);
+                history = "Aaaah, bem melhor, sinto como se eu pudesse batalhar mais 200 vezes de novo... Se bem que..... parando pra pensar, melhor não me envolver em encrencas desnecessárias, aquele homem de antes parece estar contando comigo para algo muito importante...\nEnfim, porquê eu ainda não fui levado até o próximo local?... \nAH, é claro\nEsqueci de conectar o HD ao computador... Bom, vamos lá... 1, 2, 3...";
+                texting(history, 35);
 
                 faseIncompleta = false;
             }else{
