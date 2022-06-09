@@ -325,7 +325,7 @@ public class Main {
                     }else if(acaoJogador.equalsIgnoreCase("Interagir")){
                         interacaoInvalida();
                     }else if(acaoJogador.equalsIgnoreCase("voltar")){
-                        history = "\nAtrás de mim há apenas a mini cratera formada pelo minha queda, agora ela dá forma a um mini lago com pequenos peixes. Fora isto, não há nada de interessante aqui.";
+                        history = "\nAtrás de mim há apenas a mini cratera formada pelo minha queda, agora ela dá forma a um mini lago com alguns peixinhos. Fora isto, não há nada de interessante aqui.";
                         texting(history, 35);
                     }else if(acaoJogador.equalsIgnoreCase("roupas")||acaoJogador.equalsIgnoreCase("roupa")||acaoJogador.equalsIgnoreCase("varal")){
                         history = "\nAs roupas já estão secas, seja lá quem às deixou aqui, já deve fazer algum tempo. \n\nNo bolso de uma das roupas há um papel um pouco enrrugado, deve ter secado junto com as roupas. Nele está escrito: \nMemórias secundárias são dispositivos com grandes capacidades de armazenamento, utilizadas para guardar dados de maneira a permanecerem no dispositivo mesmo após o interrompimento no fornecimento de energia.\nPor que este bilhete está aqui, e para que foi escrito?";
@@ -372,16 +372,16 @@ public class Main {
             history = "\n\nO tempo ao meu redor parece dobrar novamente e sinto que sou puxado para algo dentro de meu peito. O passar das estações e as mudanças climáticas passam diante dos meus olhos em cenários sempre distintos.\nMais uma vez, me encontro em um lugar estranho, meus sentidos e motivos parecem mais claros… De alguma forma sei que tenho uma missão a cumprir, sei que alguém ainda tenta se comunicar comigo…";
             texting(history, 35);
             history = "\n\nOk, estou dentro da casa branca novamente. Próximo de mim parece haver um dispositivo de comunicação semelhante a um headset, junto a ele, o mesmo computador de sempre está disposto em uma mesa de centro... Hmm, isso está fácil demais - Começo a caminhar em direção ao computador - Definitivamente algo não está certo.. o clima está pesado demais e.. parando pra pensar alguns detalhes ao meu redor não fazem sentido.. Por que há ferramentas espalhadas pela sala? Espera um pouco… elas estão se movendo? Mas que porcaria, eu não tenho tempo pra perder com esse tipo de alucinação, preciso sair logo desse lugar.. - chego perto da mesa de centro, ao interagir com o dispositivo de comunicação, UM VOID EM ESPIRAL surge bem em minha frente, colocando-se entre mim e o headset, me afasto instintivamente para me proteger e nesse momento percebo: Há agora uma espécie de máquina antropomórfica bem em minha frente. Seu semblante por si só é de dar calafrios.";
-            texting(history, 20);
+            texting(history, 10);
             //FALA DO BOSS
             history = "\n\n\nEU NÃO ACREDITO NO QUE ESTOU VENDO EM MINHA FRENTE MUAHAHAHAHAHAH ENTÃO A CRIATURA QUE ESTÁ ME DANDO TANTO TRABALHO NO PASSADO NÃO PASSA DE UM MERO  >>>R O B O Z I N H O<<<? VOCÊ SÓ PODE ESTAR DE BRINCADEIRA COM A MINHA CARA - Diz a figura bizarra que apareceu em minha frente.";
-            texting(history, 15);
+            texting(history, 20);
             //"FALA" DO ROBOZINHO
             history = "\n\n\nEspera, o quê? O que você quer dizer com robozinho... E como assim robozinho? - Foi o que eu quis dizer mas, quando me dei por conta, nenhum som saiu de mim.. - O que diabos é isso? - Continuei pensando comigo mesmo - EU SOU MUDO?";
             texting(history, 35);
             //FALA DO BOSS 2
             history = "\n\n\nTUDO QUE VOCÊ SABE FAZER SÃO ESSES MURMÚRIOS ESTRANHOS? VOCÊ É PRATICAMENTE FEITO DE SuCaTa, EU VOU ACABAR COM ESSA SUA VIAGENZINHA TEMPORAL AGORA MESMO, MORRA SUA PRAGA FEITA DE FERRUGEM! - O maldito robo mal termina sua frase e inicia uma ataque direto contra mim.";
-            texting(history, 15);
+            texting(history, 20);
             //RELATÓRIO DE COMBATE
             history = "\nA mão do maldito parece tão rápida quanto o próprio som, mas consigo desviar do ataque com um rápido pulo expontâneo.. Ouso então uma voz em minha cabeça.\n\nAtenção ameaça de alto nível detectada, modo de combate ativado - Enquanto a voz fala, sinto meu corpo ficando cada vez mais leve, é como se algo dentro de mim começasse a se mover, tornando cada um dos meus movimentos mais precisos - Menu de combate ativado, recomendo que escolha seus movimentos com cautela.";
             texting(history, 35);
@@ -499,7 +499,7 @@ public class Main {
         }while(faseIncompleta);
     }
     static void quest2() throws InterruptedException{
-        /*§§§§§*/history = "\n\nOk, esse computador realmente é estranho.. parece que só há um ícone na tela e, nele diz, REVISÃO DE SEGURANÇA... \nQue? não faz mais nada além de abrir esse aplicativo... Quem diabos iria querer um computador tão limitado quanto esse? \nBom... não me resta outra alternativa senão abrir o aplicativo.\nHmm, parece que só há uma pergunta... Vamos ver...";
+        history = "\n\nTá, parece a mesma coisa de antes, só há a aplicação de REVISÃO DE SEGURANÇA na tela... \nBom... não me resta outra alternativa senão abrir o aplicativo.\nHmm, parece há outra pergunta... Vamos ver...";
         texting(history, 35);
         corretoQuest = "A";
         
@@ -521,11 +521,12 @@ public class Main {
             }else if(acaoQuest.equalsIgnoreCase("A")){ //CORRETA
                 history = "\n\nAAAH, A CAIXA ABRIU!!!";
                 texting(history, 10);
-                /*§§§§§*/history = "\nPor que esse treco abriu tão violentamente? Eu tomei um susto!\nEnfim, o que temos aqui???\nUm HD? Hmm... A entrada é exatamente a mesma do computador, será que eu deveria conect";
+                history = "\nPORQUE TEM QUE SER SEMPRE TÃO BARULHENTO???\n....Enfim, o que temos aqui???\nUma Placa de Rede? Hmm... Parece que, da mesma forma que antes, um equipamento foi disponibilizado de acordo com o que estava escrito no questionário...\nBom, vejamos bem, o que eu deveria fazer com... - No momento em que eu encosto na placa de rede, uma voz estranha começa a falar em minha cabeça.";
                 texting(history, 35);
-                history = ".......";
-                texting(history, 80);
-
+                history = " - RELATORIO DE INSTALAÇÃO, INICIAR - ACLOPE O EQUIPAMENTO NA UNIDADE CENTRAL DO SEU BRAÇO ESQUERDO, EM SEGUIDA, PRESSIONE O BOTÃO AZUL AO LADO DO ENCAIXE PARA FINALIZAR A INSTALAÇÃO";
+                texting(history, 20);                
+                history = "Ohh, eu não tinha percebido que tenho equipamentos tão tecnológicos assim hehe. Ok moça, colocar no encaixe, e apertar o botão az....";
+                texting(history, 35);
                 faseIncompleta = false;
             }else{
                 questInvalida();
@@ -1046,7 +1047,7 @@ public class Main {
                     block = true;
                     menuAtk = true;
                     break;
-                //Tentativa de se esvair de suas obrigações
+                //Tentativa de se tornar um COVARDE perante suas obrigações
                 case "Correr":
                 case "correr":
                     history = "\nCorrer nunca será uma opção...\n\n";
@@ -1059,10 +1060,14 @@ public class Main {
         }while(!menuAtk);
         //Caso derrote o boss
         if(bossLife <= 0){
-            history = "Oof... Oof... Eu... Eu venci... Não acredito nisso... Oof...\n";
-            texting(history, 50);
-            history = "Esta batalha foi incrível, mals consigo expressar o que estou sentindo, a única coisa de que tenho certeza é de que devo ir logo, não tenho tempo a perder...";
-            texting(history, 35);
+            if(bossLvl == 1){
+                history = "\n\n\nFinalmente derrotei esse robô maligno… \nEstou exausto, mas preciso continuar.. - Começo a caminhar em direção ao computador estranho, deixando a carcaça do monstro metálico para trás. Ao chegar na mesa, vejo algo como uma matriz bem diante dos meus olhos. Ela me dá instruções sobre o que fazer com o headset que estava agora em minhas mãos. Sigo o procedimento até escutar um aviso de voz dizendo “instalação concluída”. \n\nNo mesmo instante em que eu concluo a instalação, um barulho de encaixe se faz presente no meu braço. O percebo que o HD que eu havia encontrado antes está num encaixe em meu braço - ..um robozinho.. - Tenho um flashback do que o inimigo havia me dito. \nBom, robô ou não, já vim muito longe seguindo minha intuição, agora preciso focar em continuar essa jornada para entender o que está acontecendo. Retiro o HD do meu braço e o conecto no computador...";
+                texting(history, 35);
+            }else if(bossLvl == 2){
+
+            }else if(bossLvl == 3){
+
+            }
         }
     }
 }
