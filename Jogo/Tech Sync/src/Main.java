@@ -121,7 +121,7 @@ public class Main {
     static void selecFase() throws InterruptedException{
         int atualFase;
         
-        for (atualFase = 1; atualFase <= 10; atualFase ++){
+        for (atualFase = 1; atualFase <= 11; atualFase ++){
             areaCenario = 1;
             faseIncompleta = true;
             
@@ -133,33 +133,94 @@ public class Main {
                 primEntrada = true;
                 quest1();
                 break;
+                
                 case 2: 
                 fase2();
+                faseIncompleta = true;
+                primEntrada = true;
+                quest2();
                 break;
+                
+                //BOSS FIGHT
                 case 3: 
                 fase3();
+                faseIncompleta = true;
+                primEntrada = true;
+                BossFight();
+                //Upgrades do player
+                sonicAtkS = true;
+                //Upgrades do boss para o próximo encontro
+                bossLife = 2 * 50;
+                bossDamage += 10;
+                bossLvl++;
                 break;
+                
                 case 4: 
                 fase4();
+                faseIncompleta = true;
+                primEntrada = true;
+                quest4();
+                //Upgrades do player
+                lifePlayer = 2 * 25;
                 break;
+                
                 case 5: 
                 fase5();
+                faseIncompleta = true;
+                primEntrada = true;
+                quest5();
                 break;
+                
+                //BOSS FIGHT
                 case 6: 
                 fase6();
+                faseIncompleta = true;
+                primEntrada = true;
+                BossFight();
+                //Upgrades do player
+                frozenAtkS = true;
+                //Upgrades do boss para o próximo encontro
+                bossLife = 4 * 25;
+                bossDamage += 10;
+                bossLvl++;
                 break;
+                
                 case 7: 
                 fase7();
+                faseIncompleta = true;
+                primEntrada = true;
+                quest7();
                 break;
+
                 case 8: 
                 fase8();
+                faseIncompleta = true;
+                primEntrada = true;
+                quest8();
                 break;
+                
+                //BOSS FIGHT
                 case 9:
                 fase9();
+                faseIncompleta = true;
+                primEntrada = true;
+                BossFight();
+                //SEM UPGRADES POIS NÃO HAVERÁ MAIS BOSS FIGHTS                
                 break;
+                
                 case 10: 
                 fase10();
+                faseIncompleta = true;
+                primEntrada = true;
+                quest10();
                 break;
+                
+                case 11:
+                FimDeJogo();
+                faseIncompleta = true;
+                primEntrada = true;
+                break;
+
                 
             }
             play = false;
@@ -199,7 +260,6 @@ public class Main {
                         history = "\nAtrás de mim há apenas a mini cratera formada pelo minha queda. Fora isto, não há nada de interessante aqui.";
                         texting(history, 35);
                     }else if(acaoJogador.equalsIgnoreCase("brinquedos")||acaoJogador.equalsIgnoreCase("brinquedo")||acaoJogador.equalsIgnoreCase("escorregador")){
-                        //Sistema de dicas como recompensa para exploração do cenário. Só estará presente na primeira fase como teste. Se possível, será adicionado um esquema de inventário onde, ao escrever "bilhete", a mensagem do mesmo seja imprimida.
                         history = "\nOs brinquedos estão largados bem ao lado do escorregador. Parece que, seja lá quem esteve aqui, teve que sair às pressas... \n\nEntre as brinquedos há um papel, nele está escrito:\nUm HD serve para Armazenar massas de dados diversificados de maneira não volátil, para usos posteriores.\nPor que este bilhete está aqui, e para que foi escrito?";
                         texting(history, 35);
                     }else{
@@ -225,8 +285,7 @@ public class Main {
                     }else if(acaoJogador.equalsIgnoreCase("Computador")||acaoJogador.equalsIgnoreCase("Caixa")||acaoJogador.equalsIgnoreCase("Interagir")){
                         faseIncompleta = false;
                     }else if(acaoJogador.equalsIgnoreCase("Voltar")){
-                        history = "Volto pelo janela de onde vim...";
-                        texting(history, 35);
+                        voltaCaminho();
                         areaCenario = 1;
                         primEntrada = true;
                     }else{
@@ -239,26 +298,99 @@ public class Main {
     
     }
     static void fase2() throws InterruptedException{
-        history = "\n\n\n\n\n\n\n\n ▄████▄      ▒█████      ███▄    █    ▄▄▄█████▓    ██▓    ███▄    █     █    ██     ▄▄▄      \n▒██▀ ▀█     ▒██▒  ██▒    ██ ▀█   █    ▓  ██▒ ▓▒   ▓██▒    ██ ▀█   █     ██  ▓██▒   ▒████▄    \n▒▓█    ▄    ▒██░  ██▒   ▓██  ▀█ ██▒   ▒ ▓██░ ▒░   ▒██▒   ▓██  ▀█ ██▒   ▓██  ▒██░   ▒██  ▀█▄  \n▒▓▓▄ ▄██▒   ▒██   ██░   ▓██▒  ████▒   ░ ▓██▓ ░    ░██░   ▓██▒  ████▒   ▓▓█  ░██░   ░██▄▄▄▄██ \n▒ ▓███▀ ░   ░ ████▓▒░   ▒██░   ▓██░     ▒██▒ ░    ░██░   ▒██░   ▓██░   ▒▒█████▓     ▓█   ▓██▒\n░ ░▒ ▒  ░   ░ ▒░▒░▒░    ░ ▒░   ▒ ▒      ▒ ░░      ░▓     ░ ▒░   ▒ ▒    ░▒▓▒ ▒ ▒     ▒▒   ▓▒█░\n  ░  ▒        ░ ▒ ▒░    ░ ░░   ░ ▒░       ░        ▒ ░   ░ ░░   ░ ▒░   ░░▒░ ░ ░      ▒   ▒▒ ░\n░           ░ ░ ░ ▒        ░   ░ ░      ░          ▒ ░      ░   ░ ░     ░░░ ░ ░      ░   ▒   \n░ ░             ░ ░              ░                 ░              ░       ░              ░  ░\n░                                                                                            ";
-        texting(history, 40);
+        primEntrada = true;
+
+        history = "\n\nApós conectar o HD junto ao computador, sinto que algo me puxou com muita força para dentro do meu peito em uma espécie de espiral estranha. Sem perceber, tudo ao meu redor mudava aos poucos, e eu sentia como se o tempo passasse bem entre os meus dedos, ainda assim, o lugar onde estou de alguma forma ainda parece o mesmo.\n\nA sensação de dever a cumprir, por outro lado, não sumiu... Uma sensação amarga e estranha  que continua martelando em algum lugar dentro da minha memória... \n\nDe alguma forma sinto que há alguém tentando se comunicar comigo...";
+        texting(history, 35);
+        do{
+            switch(areaCenario){
+
+                //CENÁRIO DE SPAWN
+                case 1:
+                    if(primEntrada){
+                        history = "\n\nOlho nos meus arredores e percebo, estou de volta ao jardim, meus arredores parecem ter mudado de alguma forma, a janela por onde eu havia entrado antes já não existe mais. Por outro lado, a passagem que leva para a garagem está completamente livre.\nJuntamente com a minha intuição, ela praticamente me convida a entrar.";
+                        texting(history, 35);
+                        primEntrada = false;
+                    }
+                    
+                    acaoJogador();
+                    
+                    System.out.println("___________________________________________________________________________________________________________________________________________________________________________________________________");
+                    if(acaoJogador.equalsIgnoreCase("olhar")){
+                        history = "\nErr, definitivamente meus arredores mudaram bastante, os brinquedos de criança sumiram e agora há um carro de época bem acabadinho. A mini cratera onde... bom... eu caí, foi aproveitada para a construção de um pequeno lago de peixes. Dessa vez a passagem pelo bosque parece ter sido bloqueada por arbustos altos... o varal, entretanto, continua lá - é sempre importante manter as roupas secas hehe - algo me chama a atenção no varal, parece que alguém esqueceu algo no bolso de uma jaqueta. A janela por onde eu havia entrado antes já não existe mais. Por outro lado, a passagem que leva para a garagem está completamente livre. \nJuntamente com a minha intuição, ela praticamente me convida a entrar.";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("frente") || acaoJogador.equalsIgnoreCase("entrar") || acaoJogador.equalsIgnoreCase("garagem") || acaoJogador.equalsIgnoreCase("passagem")){
+                        areaCenario = 2;
+                        primEntrada = true;
+                    }else if(acaoJogador.equalsIgnoreCase("Interagir")){
+                        interacaoInvalida();
+                    }else if(acaoJogador.equalsIgnoreCase("voltar")){
+                        history = "\nAtrás de mim há apenas a mini cratera formada pelo minha queda, agora ela dá forma a um mini lago com pequenos peixes. Fora isto, não há nada de interessante aqui.";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("roupas")||acaoJogador.equalsIgnoreCase("roupa")||acaoJogador.equalsIgnoreCase("varal")){
+                        history = "\nAs roupas já estão secas, seja lá quem às deixou aqui, já deve fazer algum tempo. \n\nNo bolso de uma das roupas há um papel um pouco enrrugado, deve ter secado junto com as roupas. Nele está escrito: \nMemórias secundárias são dispositivos com grandes capacidades de armazenamento, utilizadas para guardar dados de maneira a permanecerem no dispositivo mesmo após o interrompimento no fornecimento de energia.\nPor que este bilhete está aqui, e para que foi escrito?";
+                        texting(history, 35);
+                    }else{
+                        acaoInvalida();
+                    }
+                break;
+
+                //CENÁRIO DA MISSÃO PRINCIPAL
+                case 2:
+                    if (primEntrada){
+                        history = "\n\nPulo pela janela que estava aberta, a sala onde estou é ampla, existem escadas nas duas extremidades da sala, mas elas estão bloqueadas por caixas e móveis... Ao que tudo indica, uma família acabou de se mudar para cá, ainda assim, eu estranhamente tenho certeza de que não encontrarei ninguém nestas salas...\nNo centro da sala, há uma mesa com um objeto atípico, uma caixa trancada e com cabos que ligam em uma espécie de computador... Tudo naqueles objetos parecem destoar no tempo, como se não pertencessem àquele lugar.";
+                        texting(history, 35);
+                        primEntrada = false;
+                    }
+
+                    acaoJogador();
+
+                    if (acaoJogador.equalsIgnoreCase("olhar")){
+                        history = "É uma típica garagem do século passado. O carro lá fora parece ser o motivo para toda a bagunça aqui dentro.\nFora o computador que está na minha frente, nada mais por este lugar poderia me ajudar a prosseguir minha jornada...";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("Frente")||acaoJogador.equalsIgnoreCase("Entrar")){
+                        caminhoInvalido();
+                    }else if(acaoJogador.equalsIgnoreCase("Computador")||acaoJogador.equalsIgnoreCase("Caixa")||acaoJogador.equalsIgnoreCase("Interagir")){
+                        faseIncompleta = false;
+                    }else if(acaoJogador.equalsIgnoreCase("Voltar")){
+                        voltaCaminho();
+                        areaCenario = 1;
+                        primEntrada = true;
+                    }else{
+                        acaoInvalida();
+                    }
+                break;
+            }
+            
+        }while(faseIncompleta);
 
     }
     
     static void fase3() throws InterruptedException{ //BOSS FIGHT
         do{
+            //TEXTO DE INTRODUÇÃO DO CENÁRIO.
+            history = "\n\nO tempo ao meu redor parece dobrar novamente e sinto que sou puxado para algo dentro de meu peito. O passar das estações e as mudanças climáticas passam diante dos meus olhos em cenários sempre distintos.\nMais uma vez, me encontro em um lugar estranho, meus sentidos e motivos parecem mais claros… De alguma forma sei que tenho uma missão a cumprir, sei que alguém ainda tenta se comunicar comigo…";
+            texting(history, 35);
+            history = "\n\nOk, estou dentro da casa branca novamente. Próximo de mim parece haver um dispositivo de comunicação semelhante a um headset, junto a ele, o mesmo computador de sempre está disposto em uma mesa de centro... Hmm, isso está fácil demais - Começo a caminhar em direção ao computador - Definitivamente algo não está certo.. o clima está pesado demais e.. parando pra pensar alguns detalhes ao meu redor não fazem sentido.. Por que há ferramentas espalhadas pela sala? Espera um pouco… elas estão se movendo? Mas que porcaria, eu não tenho tempo pra perder com esse tipo de alucinação, preciso sair logo desse lugar.. - chego perto da mesa de centro, ao interagir com o dispositivo de comunicação, UM VOID EM ESPIRAL surge bem em minha frente, colocando-se entre mim e o headset, me afasto instintivamente para me proteger e nesse momento percebo: Há agora uma espécie de máquina antropomórfica bem em minha frente. Seu semblante por si só é de dar calafrios.";
+            texting(history, 20);
+            //FALA DO BOSS
+            history = "\n\n\nEU NÃO ACREDITO NO QUE ESTOU VENDO EM MINHA FRENTE MUAHAHAHAHAHAH ENTÃO A CRIATURA QUE ESTÁ ME DANDO TANTO TRABALHO NO PASSADO NÃO PASSA DE UM MERO  >>>R O B O Z I N H O<<<? VOCÊ SÓ PODE ESTAR DE BRINCADEIRA COM A MINHA CARA - Diz a figura bizarra que apareceu em minha frente.";
+            texting(history, 15);
+            //"FALA" DO ROBOZINHO
+            history = "\n\n\nEspera, o quê? O que você quer dizer com robozinho... E como assim robozinho? - Foi o que eu quis dizer mas, quando me dei por conta, nenhum som saiu de mim.. - O que diabos é isso? - Continuei pensando comigo mesmo - EU SOU MUDO?";
+            texting(history, 35);
+            //FALA DO BOSS 2
+            history = "\n\n\nTUDO QUE VOCÊ SABE FAZER SÃO ESSES MURMÚRIOS ESTRANHOS? VOCÊ É PRATICAMENTE FEITO DE SuCaTa, EU VOU ACABAR COM ESSA SUA VIAGENZINHA TEMPORAL AGORA MESMO, MORRA SUA PRAGA FEITA DE FERRUGEM! - O maldito robo mal termina sua frase e inicia uma ataque direto contra mim.";
+            texting(history, 15);
+            //RELATÓRIO DE COMBATE
+            history = "\nA mão do maldito parece tão rápida quanto o próprio som, mas consigo desviar do ataque com um rápido pulo expontâneo.. Ouso então uma voz em minha cabeça.\n\nAtenção ameaça de alto nível detectada, modo de combate ativado - Enquanto a voz fala, sinto meu corpo ficando cada vez mais leve, é como se algo dentro de mim começasse a se mover, tornando cada um dos meus movimentos mais precisos - Menu de combate ativado, recomendo que escolha seus movimentos com cautela.";
+            texting(history, 35);
 
-
-            //Encontro com o Boss e início da boss fight
-            BossFight();
+            //Encontro com o Boss e início da boss fight - Transferido para o seletor de fases.
+            //BossFight();
+            faseIncompleta = false;
         }while(faseIncompleta);
         
-        //Upgrades do player
-        sonicAtkS = true;
-
-        //Upgrades do boss para o próximo encontro
-        bossLife = 2 * 50;
-        bossDamage += 10;
-        bossLvl++;
     }
     
     static void fase4() throws InterruptedException{
@@ -266,8 +398,6 @@ public class Main {
 
         }while(faseIncompleta);
 
-        //Upgrades do player
-        lifePlayer = 2 * 25;
     }
     
     static void fase5() throws InterruptedException{
@@ -284,16 +414,9 @@ public class Main {
 
 
             //Encontro com o Boss e início da boss fight
-            BossFight();
+            //BossFight(); - Transferido para o seletor de fases.
         }while(faseIncompleta);
         
-        //Upgrades do player
-        frozenAtkS = true;
-
-        //Upgrades do boss para o próximo encontro
-        bossLife = 4 * 25;
-        bossDamage += 10;
-        bossLvl++;
     }
     
     static void fase7() throws InterruptedException{
@@ -320,7 +443,7 @@ public class Main {
 
 
             //Encontro com o Boss e início da boss fight
-            BossFight();
+            //BossFight(); - Transferido para o seletor de fases. 
         }while(faseIncompleta);
     
     }
@@ -330,6 +453,12 @@ public class Main {
 
         }while(faseIncompleta);
     
+    }
+
+    static void FimDeJogo() throws InterruptedException{
+        do{
+            
+        }while(faseIncompleta);
     }
 
     //Quests desenvolvidas nas fases do jogo
@@ -634,6 +763,12 @@ public class Main {
     //Caminho inválido.
     static void caminhoInvalido() throws InterruptedException{
         history = "Não há caminhos para seguir por aqui, posso apenas voltar.";
+        texting(history, 35);
+    }
+
+    //Volta caminho.
+    static void voltaCaminho() throws InterruptedException{
+        history = "Volto pelo caminho de onde vim...";
         texting(history, 35);
     }
 
