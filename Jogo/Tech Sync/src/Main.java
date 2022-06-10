@@ -1,10 +1,6 @@
 //Importe das bibliotéca
 import java.util.*;
 
-import javax.security.auth.callback.TextInputCallback;
-
-import javafx.scene.text.Text;
-
 public class Main {
     //Declaração de variáveis
     static String optionMenu, optionGame, optionMenuAtk, history, acaoJogador, acaoQuest, corretoQuest;
