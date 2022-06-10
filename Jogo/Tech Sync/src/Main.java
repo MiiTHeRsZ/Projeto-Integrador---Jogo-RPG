@@ -196,6 +196,9 @@ public class Main {
                 faseIncompleta = true;
                 primEntrada = true;
                 quest7();
+                //Upgrades do player
+                atkCD = 1;
+                lifePlayer = 4 * 25;
                 break;
 
                 case 8: 
@@ -601,7 +604,7 @@ public class Main {
                     if(acaoJogador.equalsIgnoreCase("olhar")){
                         history = "\n\nEsse lugar está um caos, a ténue linha de espaço tempo está cada vez mais frágil, muitos pulos foram necessários para reuniar as informações necessárias... Além dos objetos flutuando pela sala... bom, tudo parece normal... Hmm, parece haver algo na lareira que eu havia visto antes.. Será que alguém tentou queimar algo ali?";
                         texting(history, 35);
-                    }else if(acaoJogador.equalsIgnoreCase("frente") || acaoJogador.equalsIgnoreCase("subir") || acaoJogador.equalsIgnoreCase("escada") || acaoJogador.equalsIgnoreCase("escadaria") || acaoJogador.equalsIgnoreCase("escadas")){
+                    }else if(acaoJogador.equalsIgnoreCase("frente") || acaoJogador.equalsIgnoreCase("subir") || acaoJogador.equalsIgnoreCase("mesas") || acaoJogador.equalsIgnoreCase("mesa") || acaoJogador.equalsIgnoreCase("caminho")){
                         areaCenario = 2;
                         primEntrada = true;
                     }else if(acaoJogador.equalsIgnoreCase("Interagir")){
@@ -620,7 +623,7 @@ public class Main {
                 //CENÁRIO DA MISSÃO PRINCIPAL
                 case 2:
                     if (primEntrada){
-                        history = "\n\nAo subir as escadas, percebo o quão grande é a magnitude dessa casa, uma sala extensa se desenrola em minha frente como um domo, vejo uma espécie de biblioteca tomando conta de todas as partes, seja lá quem vive aqui, certamente é uma pessoa muito estudiosa\nNão me surpreende mais o fato de encontrar este computador estranho pelas salas dessa... digamos... jornada. Só me incomoda o quanto ele parece distópico em relação a todo o resto do ambiente...\nDessa vez ele se encontra no meio da sala, no ponto central que dá origem ao domo redondo que é a sala, a caixa estranha com fios conectados continua lá, e eu sei que ela guarda exatamente o que eu preciso para reparar o dano que sofri.";
+                        history = "\n\nAo subir o caminho feito pelas mesas, deparo-me com uma parede e o computador disposto bem em sua frente, nada mais, nada menos... Fico feliz por não ter que procura-lo. Sinto que, para cada segundo que perco aqui, vidas são perdidas na minha atualidade. Enfim, melhor acessar logo o computador...";
                         texting(history, 35);
                         primEntrada = false;
                     }
@@ -628,27 +631,24 @@ public class Main {
                     acaoJogador();
 
                     if (acaoJogador.equalsIgnoreCase("olhar")){
-                        history = "A bíblioteca tem proporções absurdas, há tantos livros aqui que provavelmente um só humano não conseguiria ler em uma vida. \nO formato circular da sala favorece a impressão de que, não importa para onde você olhe, sempre há uma sessão diferente para descobrir com centenas de livros. O computador estranho está localizado no centro dessa sala, no ponto X da redoma, sei que preciso ir até ele me reparar e, principalmente, para avançar na minha jornada.\nAdoro a ideia de poder absorver tanto conhecimento, mas no momento, só tenho tempo para presseguir com meu objetivo.";
+                        history = "Só há o computador na minha frente. Fora isso, uma parede branca se extende de canto a canto da sala, melhor acessar logo o computador...";
                         texting(history, 35);
                     }else if(acaoJogador.equalsIgnoreCase("Frente")||acaoJogador.equalsIgnoreCase("Entrar")){
                         caminhoInvalido();
                     }else if(acaoJogador.equalsIgnoreCase("Computador")||acaoJogador.equalsIgnoreCase("Caixa")||acaoJogador.equalsIgnoreCase("Interagir")){
                         faseIncompleta = false;
                     }else if(acaoJogador.equalsIgnoreCase("Voltar")){
-                        voltaCaminho();
-                        areaCenario = 1;
-                        primEntrada = true;
+                        history = "Melhor acessar logo o computador...";
+                        texting(history, 35);
                     }else{
-                        acaoInvalida();
+                        history = "Melhor acessar logo o computador...";
+                        texting(history, 35);
                     }
                 break;
             }
             
         }while(faseIncompleta);
 
-        //Upgrades do player
-        atkCD = 1;
-        lifePlayer = 4 * 25;
     }
     
     static void fase8() throws InterruptedException{
@@ -853,7 +853,7 @@ public class Main {
     //COMBATE NO LUGAR DA SEXTA QUEST
 
     static void quest7() throws InterruptedException{
-        /*§§§§§*/history = "\n\nOk, esse computador realmente é estranho.. parece que só há um ícone na tela e, nele diz, REVISÃO DE SEGURANÇA... \nQue? não faz mais nada além de abrir esse aplicativo... Quem diabos iria querer um computador tão limitado quanto esse? \nBom... não me resta outra alternativa senão abrir o aplicativo.\nHmm, parece que só há uma pergunta... Vamos ver...";
+        history = "\n\nREVISÃO DE SEGURANÇA... \nO que será dessa vez?...";
         texting(history, 35);
         corretoQuest = "A";
         
@@ -873,12 +873,12 @@ public class Main {
             if(acaoQuest.equalsIgnoreCase("B") || acaoQuest.equalsIgnoreCase("C")){
                 erraQuest();
             }else if(acaoQuest.equalsIgnoreCase("A")){ //CORRETA
-                history = "\n\nAAAH, A CAIXA ABRIU!!!";
-                texting(history, 10);
-                /*§§§§§*/history = "\nPor que esse treco abriu tão violentamente? Eu tomei um susto!\nEnfim, o que temos aqui???\nUm HD? Hmm... A entrada é exatamente a mesma do computador, será que eu deveria conect";
+                history = "\n\nOk, há uma memória RAM na caixa.";
+                texting(history, 20);
+                history = "\nConectando HD no computador... Porque esse treco começou a demorar par copiar justamente agora?\n\nParabéns, sétimo bloco de memória recuperado com sucesso, faltam aproximadamente\n...................\n3 blocos de memóra, continue com o bom trabalho.\n\nFinalmente.";
                 texting(history, 35);
-                history = ".......";
-                texting(history, 80);
+                history = "\nABRIR VORTEX TEMPORAL!!!";
+                texting(history, 20);
 
                 faseIncompleta = false;
             }else{
@@ -889,7 +889,7 @@ public class Main {
     }
 
     static void quest8() throws InterruptedException{
-        /*§§§§§*/history = "\n\nOk, esse computador realmente é estranho.. parece que só há um ícone na tela e, nele diz, REVISÃO DE SEGURANÇA... \nQue? não faz mais nada além de abrir esse aplicativo... Quem diabos iria querer um computador tão limitado quanto esse? \nBom... não me resta outra alternativa senão abrir o aplicativo.\nHmm, parece que só há uma pergunta... Vamos ver...";
+        history = "\n\nREVISÃO DE SEGURANÇA... \nOK OK OK, depois desse só tem mais dois, VAMO LÁ..";
         texting(history, 35);
         corretoQuest = "B";
         
