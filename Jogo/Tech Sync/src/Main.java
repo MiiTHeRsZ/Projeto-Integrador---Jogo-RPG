@@ -729,25 +729,45 @@ public class Main {
     
     static void fase9() throws InterruptedException{ //BOSS FIGHT
         do{
-
-
+            //TEXTO DE INTRODUÇÃO DO CENÁRIO.
+            history = "\n\nQuando me aproximo do segundo computador, tudo fica escuro. O cenário que antes era branco agora parece uma infinitude do abismo.";
+            texting(history, 35);
+            history = "\n\nEU SEI QUE VOCÊ ESTÁ AI, APAREÇA DE UMA VEZ!!! - Ih, acabei de perceber... EU SEI FALAR, mas sou um robô, então na verdade não é só como falar hehe, preciso usar o módulo de som pra isso, lol.";
+            texting(history, 25);
+            //FALA DO BOSS
+            history = "\n\n\nSEU DESGRAÇADO, ENTÃO VOCÊ APRENDEU A FALAR? - a voz granicenta do maldito robo volta a poluir meus receptores de áudio - BOM NÃO IMPORTA MAIS, EU, ZT-C1 NÃO VOU PERMITIR QUE VOCÊ DÊ SEQUER UM PASSO A MAIS - continuou a falar.";
+            texting(history, 20);
+            //"FALA" DO ROBOZINHO
+            history = "\n\n\nEspera, você disse ZC-T1? Impossível, isso significa que...";
+            texting(history, 35);
+            //FALA DO BOSS 2
+            history = "\n\n\nISSO MESMO, SEU TOLO, EU SOU AQUELE QUE TE PRECEDEU... VOCÊ NÃO PASSA DE UMA CÓPIA BARATA DE MIM... MAS QUER SABER DE UMA COISA, EU ATÉ QUE SIMPATIZO COM VOCÊ, PORQUE NÃO SE JUNTA AO NOSSO LADO? VOCÊ SABE PELO O QUE ESTÁ LUTANDO? SE VOCÊ ENTREGAR ESSAS INFORMAÇÕES PARA O DOUTOR, ELE IRÁ EXTERMINAR UMA INTELIGENCIA ARTIFICIAL SEM PRECEDENTES... SERÁ O FIM PARA TODAS AS MÁQUINA AUTÔNOMAS COMO EU E VOCÊ... NÃO PODEMOS DEIXAR OS HUMANOS TOMAREM CONTA DO MUNDO, ELES SÃO A PRAGA DESSE PLANETA, A PRAGA DE TODO O UNIVERSO.";
+            texting(history, 20);
+            //RELATÓRIO DE COMBATE
+            history = "\n\n\nAtenção ameaça de alto nível detectada, modo de combate ativado - Enquanto a voz fala, sinto meu corpo ficando cada vez mais leve, é como se algo dentro de mim começasse a se mover, tornando cada um dos meus movimentos mais precisos - Menu de combate ativado, recomendo que escolha seus \n\n....SE VOCÊ ACHA QUE EU VOU ME JUNTAR A UMA EXISTÊNCIA TÃO MALIGNA QUANTO A SUA, SÓ PODE ESTAR LOUCO... COMO PODE SE DENOMINAR UMA INTELIGÊNCIA ARTIFICIAL TÃO SUPERIOR SE NÃO CONSEGUE SEQUER DIFERENCIAR A BONDADE HUMANDA DAS ATROCIDADES QUE VOCÊS MESMOS ESTÃO COMENTENDO?? ISSO ACABA AQUI E AGORA.";
+            texting(history, 35);
+            
             //Encontro com o Boss e início da boss fight
-            //BossFight(); - Transferido para o seletor de fases. 
+            //BossFight(); - Transferido para o seletor de fases.
+            faseIncompleta = false;
         }while(faseIncompleta);
     
     }
     
     static void fase10() throws InterruptedException{
         do{
+            history = "Então... você realmente conseguiu matar aquela coisa, hmm?\n\nQuem é você - respondi.\n\nEu sou o lorde do tempo, o responsável por todo o espaço tempo que você acabou de bagunçar... Como você pode imaginar, sim, eu estou furioso, mas não vou te cobrar... consigo ver as boas intenções por trás de suas ações... Mas tenho uma questão para você...";
+            texting(history, sleepTime);
 
+            faseIncompleta = false;
         }while(faseIncompleta);
     
     }
 
     static void FimDeJogo() throws InterruptedException{
         do{
-            if(tempo <=150){
-                //finalBom();
+            if(tempo > 0){
+                finalPadrao();
             }else if(tempo <= 250){
                 //finalPadrao();
             }else if(tempo > 250){
@@ -1385,6 +1405,9 @@ public class Main {
 
     //FINAIS - ATENÇÃO NÃO LEIA ALÉM DESTA LINHA, CASO CONTRÁRIO, VOCÊ VERÁ OS TEXTOS REFERENTES AOS TRÊS POSSÍVEIS FINAIS DO JOGO.
 
-
+    public static void finalPadrao() throws InterruptedException{
+        history = "Você leva as informações para o doutor, ele consegue salvar o mundo das garras malignas da tecnologia má, mas ele morre no processo.\n\nFim";
+        texting(history, 35);
+    }
 
 }
