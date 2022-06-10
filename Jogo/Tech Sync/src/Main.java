@@ -1016,9 +1016,9 @@ public class Main {
     //COMBATE NO LUGAR DA NINA FASE
 
     static void quest10() throws InterruptedException{
-        /*§§§§§*/history = "\n\nEstá é a parte final de sua jornada, todos os seus outros saltos temporais te trouxeram aqui, mas não por acaso ou coincidência, mas porque todos os outros caminhos tinham conhecimentos a serem passados adiante, e é aqui e agora que essa jornada terá seu ponto crucial, onde você será testado e é onde você deverá mostrar os frutos do seu esforço(...)";
+        history = "\n\nEstá é a parte final de sua jornada, todos os seus outros saltos temporais te trouxeram aqui, mas não por acaso ou coincidência, mas porque todos os outros caminhos tinham conhecimentos a serem passados adiante, e é aqui e agora que essa jornada terá seu ponto crucial, onde você será testado e é onde você deverá mostrar os frutos do seu esforço(...)";
         texting(history, 35);
-        /*§§§§§*/history = "Para voltar a sua era, você deverá conectar as peças que estão armazenadas na gaveta abaixo a mim, isso fará com que eu tenha potência o suficiente para ajudar a te mandar de volta. Mas lembre-se, a ordem que você deverá colocar os componentes deve ser específica, e para te auxiliar nisso há algumas frases com lacunas a serem preenchidas.";
+        history = "Para voltar a sua era, você deverá conectar as peças que estão armazenadas na gaveta abaixo a mim, isso fará com que eu tenha potência o suficiente para ajudar a te mandar de volta. Mas lembre-se, a ordem que você deverá colocar os componentes deve ser específica, e para te auxiliar nisso há algumas frases com lacunas a serem preenchidas.";
         texting(history,35);
         corretoQuest = "C";
         
@@ -1040,7 +1040,7 @@ public class Main {
             }else if(acaoQuest.equalsIgnoreCase("C")){ //CORRETA
                 history = "\n\nAAAH, A CAIXA ABRIU!!!";
                 texting(history, 10);
-                /*§§§§§*/history = "\nPor que esse treco abriu tão violentamente? Eu tomei um susto!\nEnfim, o que temos aqui???\nUm HD? Hmm... A entrada é exatamente a mesma do computador, será que eu deveria conect";
+                history = "\nPor que esse treco abriu tão violentamente? Eu tomei um susto!\nEnfim, o que temos aqui???\nUm HD? Hmm... A entrada é exatamente a mesma do computador, será que eu deveria conect";
                 texting(history, 35);
                 history = ".......";
                 texting(history, 80);
