@@ -3,6 +3,8 @@ import java.util.*;
 
 import javax.security.auth.callback.TextInputCallback;
 
+import javafx.scene.text.Text;
+
 public class Main {
     //Declaração de variáveis
     static String optionMenu, optionGame, optionMenuAtk, history, acaoJogador, acaoQuest, corretoQuest;
@@ -388,7 +390,7 @@ public class Main {
             history = "\n\n\nTUDO QUE VOCÊ SABE FAZER SÃO ESSES MURMÚRIOS ESTRANHOS? VOCÊ É PRATICAMENTE FEITO DE SuCaTa, EU VOU ACABAR COM ESSA SUA VIAGENZINHA TEMPORAL AGORA MESMO, MORRA SUA PRAGA FEITA DE FERRUGEM! - O maldito robo mal termina sua frase e inicia uma ataque direto contra mim.";
             texting(history, 20);
             //RELATÓRIO DE COMBATE
-            history = "\nA mão do maldito parece tão rápida quanto o próprio som, mas consigo desviar do ataque com um rápido pulo expontâneo.. Ouso então uma voz em minha cabeça.\n\nAtenção ameaça de alto nível detectada, modo de combate ativado - Enquanto a voz fala, sinto meu corpo ficando cada vez mais leve, é como se algo dentro de mim começasse a se mover, tornando cada um dos meus movimentos mais precisos - Menu de combate ativado, recomendo que escolha seus movimentos com cautela.";
+            history = "\nA mão do maldito parece tão rápida quanto o próprio som, mas consigo desviar do ataque com um rápido pulo expontâneo.. Ouço então uma voz em minha cabeça.\n\nAtenção ameaça de alto nível detectada, modo de combate ativado - Enquanto a voz fala, sinto meu corpo ficando cada vez mais leve, é como se algo dentro de mim começasse a se mover, tornando cada um dos meus movimentos mais precisos - Menu de combate ativado, recomendo que escolha seus \n\n";
             texting(history, 35);
             
             //Encontro com o Boss e início da boss fight - Transferido para o seletor de fases.
@@ -433,7 +435,7 @@ public class Main {
                     }else if(acaoJogador.equalsIgnoreCase("voltar")){
                         history = "\nAtrás de mim deveria haver uma janela que levaria de volta ao jardim, entretanto, no lugar disso tudo que há é uma parede. A janela deve ter sido removida junto da reforma. De qualquer forma, preciso encontrar outro caminho...";
                         texting(history, 35);
-                    }else if(acaoJogador.equalsIgnoreCase("roupas")||acaoJogador.equalsIgnoreCase("roupa")||acaoJogador.equalsIgnoreCase("varal")){
+                    }else if(acaoJogador.equalsIgnoreCase("fotografia")||acaoJogador.equalsIgnoreCase("foto")||acaoJogador.equalsIgnoreCase("quadro")){
                         history = "\nAo pegar a fotografia, vejo um alvo homem com seus aproximadamente 60 anos. Os cabelos brancos deixam bem nítido o quanto o tempo o marcou... Do seu lado, há um rapaz na flor de seus 20 e poucos anos que claramente não queria estar naquela foto..\nNa parte de trás do quadro, consigo ver um papel dobrado. Nele está escrito: \nA placa-mãe é o dispositivo encarregado de fazer a interação dos hardwares entre si, sem ela não teriam como trocar informações para que pudessem funcionar em conjunto.\nPor que este bilhete está aqui, e para que foi escrito?";
                         texting(history, 35);
                     }else{
@@ -551,17 +553,97 @@ public class Main {
 
     static void fase6() throws InterruptedException{ //BOSS FIGHT
         do{
-
+            //TEXTO DE INTRODUÇÃO DO CENÁRIO.
+            history = "\n\nAcordei com uma sensação estranha, ainda estava no chão quando ouvi aquela voz novamente.\n\nParabéns, quinto bloco de memória recuperado com sucesso, faltam aproximadamente\n...................\n5 blocos de memóra, continue com o bom trabalho.\n\nOlho ao meu redor, estou mais uma vez na sala principal da casa, mas... essa não, vejo as ferramentas flutuando pela sala de novo, e dessa vez elas parecem ENSANGUENTADAS? MAS QUE MERDA É ESSA?... Merda, sinto que aquele robô escroto pode aparecer a qualquer momento... É melhor eu sair logo daqui.\n\nO computador e a caixa estão no centro da sala mais uma vez, sob a mesa de vidro, na caixa parece haver uma espécime de dissipador de calor.\nComeço a caminhar em direção ao computador mas a sensação de que algo não está certo se faz presente de novo.. o clima está pesado demais.. Chego perto da mesa de centro, ao interagir com o computador, UM VOID EM ESPIRAL surge bem em minha frente...";
+            texting(history, 35);
+            history = "\n\nAAAAAAAAAAAAAAAAH DE NOVO NÃÃÃOOOOO.";
+            texting(history, 25);
+            //FALA DO BOSS
+            history = "\n\n\nMUAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA SEU ROBÔ ESTÚPIDO, ENTÃO QUER DIZE QUE VOCÊ CONTINUA PERANBULANDO POR AÍ... NÃO ACHA QUE JÁ ESTÁ NA HORA DE IR PRO >> FERRO-VELHO << - Diz o robô maligno ao aparecer novamente na sala, sua voz robótica está carregada de desdém - BOM, VOCÊ É DE FATO MAIS FORTE E INTELIGENTE DO QUE EU IMAGINAVA, POR CONTA DISSO, TE DAREI O PRIVILÉGIO DE DESCOBRIR O MEU NOM...";
+            texting(history, 20);
+            //"FALA" DO ROBOZINHO
+            history = "\n\n\nDessa vez, eu me adiantei, pulo para a frente e desfiro um ataque violento contra o patético pedaço de ferro ambulante, entretanto, ele interrompe a fala e desvia de meu ataque... \nEu já sei que não adianta de nada tentar dialogar com ele, não consigo falar no final das contas, então é melhor tentar acabar com isso o quanto antes.";
+            texting(history, 35);
+            //FALA DO BOSS 2
+            history = "\n\n\nORA ORA ORA, ENTÃO VAI SER ASSIM QUE VAMOS CONTINUAR? SEU INSOLENTE, EU VOU REDUZIR VOCÊ A UM MONTE IRRECONHECIDO DE fErRuGeM e FeRrO aMaSsAdO.";
+            texting(history, 20);
+            //RELATÓRIO DE COMBATE
+            history = "\n\n\nAtenção ameaça de alto nível detectada, modo de combate ativado - Enquanto a voz fala, sinto meu corpo ficando cada vez mais leve, é como se algo dentro de mim começasse a se mover, tornando cada um dos meus movimentos mais precisos - Menu de combate ativado, recomendo que escolha seus \n\n";
+            texting(history, 35);
 
             //Encontro com o Boss e início da boss fight
             //BossFight(); - Transferido para o seletor de fases.
+            faseIncompleta = false;
         }while(faseIncompleta);
         
     }
     
     static void fase7() throws InterruptedException{
-        do{
+        primEntrada = true;
 
+        history = "\n\nCerto, cheguei na nova área, não tenho mais tempo a perder.\n\nParabéns, sexto bloco de memória recuperado com sucesso, faltam aproximadamente\n...................\n4 blocos de memóra, continue com o bom trabalho.";
+        texting(history, 35);
+
+        do{
+            switch(areaCenario){
+
+                //CENÁRIO DE SPAWN
+                case 1:
+                    if(primEntrada){
+                        history = "\n\n Hmm... Estou nessa maldita sala mais uma vez... vejamos, nada mais está certo, os objetos estão flutuando por toda parte, as escadas não existem mais, mas as mesas e cadeiras parecem formar uma espécime de ponte para o próximo andar, preciso ir até lá.";
+                        texting(history, 35);
+                        primEntrada = false;
+                    }
+                    
+                    acaoJogador();
+                    
+                    System.out.println("___________________________________________________________________________________________________________________________________________________________________________________________________");
+                    if(acaoJogador.equalsIgnoreCase("olhar")){
+                        history = "\n\nEsse lugar está um caos, a ténue linha de espaço tempo está cada vez mais frágil, muitos pulos foram necessários para reuniar as informações necessárias... Além dos objetos flutuando pela sala... bom, tudo parece normal... Hmm, parece haver algo na lareira que eu havia visto antes.. Será que alguém tentou queimar algo ali?";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("frente") || acaoJogador.equalsIgnoreCase("subir") || acaoJogador.equalsIgnoreCase("escada") || acaoJogador.equalsIgnoreCase("escadaria") || acaoJogador.equalsIgnoreCase("escadas")){
+                        areaCenario = 2;
+                        primEntrada = true;
+                    }else if(acaoJogador.equalsIgnoreCase("Interagir")){
+                        interacaoInvalida();
+                    }else if(acaoJogador.equalsIgnoreCase("voltar")){
+                        history = "\nAtrás de mim deveria haver uma janela que levaria de volta ao jardim, entretanto, no lugar disso tudo que há é uma parede. A janela deve ter sido removida junto da reforma... ou seja lá o que aconteceu aqui. De qualquer forma, preciso encontrar outro caminho...";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("lareira")||acaoJogador.equalsIgnoreCase("fogo")||acaoJogador.equalsIgnoreCase("cinzas")){
+                        history = "\nUm bilhete chamuscado pode ser encontrado em meio às cinzas recém queimadas. Nele está escrito: \nA memória RAM tem como principal função guardar informações que são usadas pelo SO ou por aplicativos, além de outros dados necessários para o funcionamento do sistema, porém esses dados só se permanecem armazenados enquanto o computador está ligado, caso contrário ela é reiniciada e seus dados perdidos.\nBom, claramente essa é uma dica relacionada ao objeto dessa área... melhor guardar bem essas informações.";
+                        texting(history, 35);
+                    }else{
+                        acaoInvalida();
+                    }
+                break;
+
+                //CENÁRIO DA MISSÃO PRINCIPAL
+                case 2:
+                    if (primEntrada){
+                        history = "\n\nAo subir as escadas, percebo o quão grande é a magnitude dessa casa, uma sala extensa se desenrola em minha frente como um domo, vejo uma espécie de biblioteca tomando conta de todas as partes, seja lá quem vive aqui, certamente é uma pessoa muito estudiosa\nNão me surpreende mais o fato de encontrar este computador estranho pelas salas dessa... digamos... jornada. Só me incomoda o quanto ele parece distópico em relação a todo o resto do ambiente...\nDessa vez ele se encontra no meio da sala, no ponto central que dá origem ao domo redondo que é a sala, a caixa estranha com fios conectados continua lá, e eu sei que ela guarda exatamente o que eu preciso para reparar o dano que sofri.";
+                        texting(history, 35);
+                        primEntrada = false;
+                    }
+
+                    acaoJogador();
+
+                    if (acaoJogador.equalsIgnoreCase("olhar")){
+                        history = "A bíblioteca tem proporções absurdas, há tantos livros aqui que provavelmente um só humano não conseguiria ler em uma vida. \nO formato circular da sala favorece a impressão de que, não importa para onde você olhe, sempre há uma sessão diferente para descobrir com centenas de livros. O computador estranho está localizado no centro dessa sala, no ponto X da redoma, sei que preciso ir até ele me reparar e, principalmente, para avançar na minha jornada.\nAdoro a ideia de poder absorver tanto conhecimento, mas no momento, só tenho tempo para presseguir com meu objetivo.";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("Frente")||acaoJogador.equalsIgnoreCase("Entrar")){
+                        caminhoInvalido();
+                    }else if(acaoJogador.equalsIgnoreCase("Computador")||acaoJogador.equalsIgnoreCase("Caixa")||acaoJogador.equalsIgnoreCase("Interagir")){
+                        faseIncompleta = false;
+                    }else if(acaoJogador.equalsIgnoreCase("Voltar")){
+                        voltaCaminho();
+                        areaCenario = 1;
+                        primEntrada = true;
+                    }else{
+                        acaoInvalida();
+                    }
+                break;
+            }
+            
         }while(faseIncompleta);
 
         //Upgrades do player
@@ -691,7 +773,7 @@ public class Main {
         
         do{
             //Questionário: A alternativa correta é a B.
-            history = "A placa-mãe pode ser considerado o dispositivo central do computador, pois:\n\nA) É o dispositivo encarregado de calcular todas a variáveis de informações que recebe constantemente.\nB) É o dispositivo encarregado de fazer a interação dos hardwares entre si, sem ela não teriam como trocar informações para que pudessem funcionar em conjunto.\nC) É responsável por fornecer apenas energia aos outros componentes que estão diretamente em contato com ela.";
+            history = "\nA placa-mãe pode ser considerado o dispositivo central do computador, pois:\n\nA) É o dispositivo encarregado de calcular todas a variáveis de informações que recebe constantemente.\nB) É o dispositivo encarregado de fazer a interação dos hardwares entre si, sem ela não teriam como trocar informações para que pudessem funcionar em conjunto.\nC) É responsável por fornecer apenas energia aos outros componentes que estão diretamente em contato com ela.";
             texting(history, 5);
             
             if(primEntrada){
@@ -711,10 +793,13 @@ public class Main {
                 texting(history, 35);
                 history = "\nANÁLISE DE DANOS ATUALIZADA, SOLTANDO MÓDULOS DANIFICADOS, APROXIME A PLACA DA UNIDADE TRASEIRA, OS MICROROBOS DE REPARO CUIDARÃO DO RESTO.";
                 texting(history, 20);
-                history = ".......";
+                history = "\n.......";
                 texting(history, 80);
-                history = "Aaaah, bem melhor, sinto como se eu pudesse batalhar mais 200 vezes de novo... Se bem que..... parando pra pensar, melhor não me envolver em encrencas desnecessárias, aquele homem de antes parece estar contando comigo para algo muito importante...\nEnfim, porquê eu ainda não fui levado até o próximo local?... \nAH, é claro\nEsqueci de conectar o HD ao computador... Bom, vamos lá... 1, 2, 3...";
+                history = "\nAaaah, bem melhor, sinto como se eu pudesse batalhar mais 200 vezes de novo... Se bem que..... parando pra pensar, melhor não me envolver em encrencas desnecessárias, aquele homem de antes parece estar contando comigo para algo muito importante...\nEnfim, porquê eu ainda não fui levado até o próximo local?... \nAH, é claro\nEsqueci de conectar o HD ao computador... Bom, vamos lá...";
                 texting(history, 35);
+                history = "\nParabéns, quarto bloco de memória recuperado com sucesso, faltam aproximadamente\n...................\n7 blocos de memóra, continue com o bom trabalho.";
+                texting(history, 20);
+                history = "\nOk, essa foi fácil..\n...\nErrr\nEntão..... quando você quiser eu vou...\nUé, será que os pulos estão quebrAAAAAAAAAAAAAAAAAA....";
 
                 faseIncompleta = false;
             }else{
@@ -752,9 +837,9 @@ public class Main {
                 texting(history, 5);
                 history = "\nEU AINDA VOU DESTRUIR O RESPONSÁVEL POR FAZER ESSAS CAIXAS!!!\n\nArgh, é melhor eu copiar o bloco de dados logo... Enquanto isso.. deixe me ver o que temos na caixa... Hmm, um processador como esperado.";
                 texting(history, 35);
-                history = "INICIANDO PROTOCOLO DE UPGRADE - CORTEX PRINCIPAL, ANTEÇÃO, APÓS A INSTALAÇÃO SERA NECESSÁRIO REALIZAR UM REBOOT DO SISTEMA, APROXIME A UNIDADE DE PROCESSAMENTO DO NÚCLEO DE PROCESSAMENTO CENTRAL - SUA CABEÇA - SE DESEJA CONTINUAR.";
+                history = "\n\nINICIANDO PROTOCOLO DE UPGRADE - CORTEX PRINCIPAL, ANTEÇÃO, APÓS A INSTALAÇÃO SERA NECESSÁRIO REALIZAR UM REBOOT DO SISTEMA, APROXIME A UNIDADE DE PROCESSAMENTO DO NÚCLEO DE PROCESSAMENTO CENTRAL - SUA CABEÇA - SE DESEJA CONTINUAR.";
                 texting(history, 20);
-                history = "Ué, porquê não... O que pode dar errad...";
+                history = "\n\nUé, porquê não... O que pode dar errad...";
                 texting(history, 35);
 
                 faseIncompleta = false;
@@ -774,7 +859,7 @@ public class Main {
         
         do{
             //Questionário: A alternativa correta é a A.
-            history = "A memória principal tem um papel muito importante, pois:\n\nA) Tem como principal função guardar informações que são usadas pelo SO ou por aplicativos, além de outros dados necessários para o funcionamento do sistema, porém esses dados só se permanecem armazenados enquanto o computador está ligado, caso contrário ela é reiniciada e seus dados perdidos.\nB) é um dispositivo com grandes capacidades de armazenamento, utilizada para guardar dados de maneira a permanecerem no dispositivo mesmo após o interrompimento no fornecimento de energia.\nC) Ser utilizada como uma espécie de backup da memória secundária, já que é mais fácil trocar para memória principal do que recarregar a secundária.";
+            history = "\nA memória principal tem um papel muito importante, pois:\n\nA) Tem como principal função guardar informações que são usadas pelo SO ou por aplicativos, além de outros dados necessários para o funcionamento do sistema, porém esses dados só se permanecem armazenados enquanto o computador está ligado, caso contrário ela é reiniciada e seus dados perdidos.\nB) é um dispositivo com grandes capacidades de armazenamento, utilizada para guardar dados de maneira a permanecerem no dispositivo mesmo após o interrompimento no fornecimento de energia.\nC) Ser utilizada como uma espécie de backup da memória secundária, já que é mais fácil trocar para memória principal do que recarregar a secundária.";
             texting(history, 5);
             
             if(primEntrada){
@@ -1220,10 +1305,17 @@ public class Main {
                 history = "\n\n\nFinalmente derrotei esse robô maligno... \nEstou exausto, mas preciso continuar.. - Começo a caminhar em direção ao computador estranho, deixando a carcaça do monstro metálico para trás. Ao chegar na mesa, vejo algo como uma matriz bem diante dos meus olhos. Ela me dá instruções sobre o que fazer com o headset que estava agora em minhas mãos. Sigo o procedimento até escutar um aviso de voz dizendo “instalação concluída”. \n\nNo mesmo instante em que eu concluo a instalação, um barulho de encaixe se faz presente no meu braço. O percebo que o HD que eu havia encontrado antes está num encaixe em meu braço - ..um robozinho.. - Tenho um flashback do que o inimigo havia me dito. \nBom, robô ou não, já vim muito longe seguindo minha intuição, agora preciso focar em continuar essa jornada para entender o que está acontecendo. Retiro o HD do meu braço e o conecto no computador...";
                 texting(history, 35);
             }else if(bossLvl == 2){
-
+                history = "\n\n\nCERTO, ELE FINALMENTE ESTÁ NO CHÃO NOVAMENTE, EU PRECISO CORRER OU ENTÃO ELE PODE LEVANTAR E ME ATACAR COMO DA OUTRA VEZ.\nCorro com toda a energia que me sobra, deslizo por de baixo da mesa de vidro e conecto o HD no computador. Pego o dissipador e institivamente conecto ele junto à unidade de resfriamento geral. \nAlgo dentro de mim mudou, como um estalar de dedos, consigo entender todos os componentes que me compõem... O tempo que tenho para completar minha missão está cada vez mais curto, mas eu também estou cada vez mais próximo do meu ...presente...\nO download foi concluído, mas posso ver o maldito monte de ferro se mexer no chão..\n\nATIVAR VORTICE TEMPORAL!!!";
+                texting(history, 25);
             }else if(bossLvl == 3){
-
+                history = "\n\n\nZ1 cai de joelhos, ele está no seu limite, mas parece continuar reunindo forças para me enfrentar, ele então parte para cima de mim em um último ataque desesperado, consigo desviar, mas ele acerta a mesa com o computador, derrubando todo no chão do salão.\n\nMERDA, essas coisas não podem ser danificadas, caso contrário, a humanidade toda estará perdida... É então que eu noto... na caixa, aquilo é...\n\nSEU MISERÁVEL, eu me recuso a te ver novamente. Eu sou tudo aquilo que VOCÊ NÃO CONSEGUIU SER.\n\nCorro até o computador, pego a peça caída pelo chão, e aclopo ela ao núcleo em meu peito.\n\nMORRA DE UMA VEZ POR TODAS SEU VERME\nATAQUE FINAL - DISRUPÇÃÃÃÃÃÃÃÃÃÃÃÃÃO GRÁFICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+                texting(history, 25);
             }
         }
     }
+
+    //FINAIS - ATENÇÃO NÃO LEIA ALÉM DESTA LINHA, CASO CONTRÁRIO, VOCÊ VERÁ OS TEXTOS REFERENTES AOS TRÊS POSSÍVEIS FINAIS DO JOGO.
+
+
+
 }
