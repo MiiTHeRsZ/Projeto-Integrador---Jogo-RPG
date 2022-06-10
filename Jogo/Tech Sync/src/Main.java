@@ -206,6 +206,8 @@ public class Main {
                 faseIncompleta = true;
                 primEntrada = true;
                 quest8();
+                //Upgrades do player
+                damagePlayer += 10;
                 break;
                 
                 //BOSS FIGHT
@@ -400,26 +402,26 @@ public class Main {
             //BossFight();
             faseIncompleta = false;
         }while(faseIncompleta);
-    
+        
     }
     
     static void fase4() throws InterruptedException{
         primEntrada = true;
-
+        
         history = "\n\nDessa vez, o passar do tempo me pareceu diferente, demorei para processar mas, antes de ser puxado por mais uma vez, de relance pude ver a maldita máquina ainda de pé. Após isso, foi como apagar e passar por um mutirão de luzes vermelhas que piscam por todos os lados. Quando as coisas ao meu redor pararam de mudar, pude reparar uma voz dentro da minha cabeça, era a mesma de antes.";
         texting(history, 35);
         history = "\nRelatório de Danos: Componentes primordiais da placa principal danificados, núcleo de retaguarda atingido, procedimento recomendado: substituição de componentes. O mapa temporal aponta um equipamento compatível nesta época. Marcando coordenadas.";
         texting(history, 20);
         history = "\nPELOS DEUSES - uma segunda voz, dessa vez bem familiar, ecoou pela minha cabeça - O que diabos aconteceu contigo ZC-T2? E “quando” é este lugar onde você está?... - Por mais que a voz me pareça familiar, não consigo lembrar da imagem desse homem, só sei que deve ser alguém importante para mim - Hmmm... Deixe-me pensar... Acho que entendi, os relatórios em tempo real acabaram de ser atualizados... Parece que o maldito SyncWare pode te encontrar mesmo através das barreiras do tempo... Ok, sem pânico, os protocolos de segurança já te direcionaram para um momento apropriado da história, tudo que você precisa fazer é buscar aquele bloco de memória e usar as peças que encontrar no meio do caminho para reparar os seus danos, justamente como está descrito nos protocolos de emergência. - O homem disse com um leve peso em sua voz - Por favor ZC-T2, eu sei que você não é capaz de entender minhas súplicas, mas lembre-se da import..... - A voz é abruptamente interrompida, meus sentidos estão cada vez mais atordoados, tenho que continuar seguindo em frente...";
         texting(history, 35);
-
+        
         do{
             switch(areaCenario){
-
+                
                 //CENÁRIO DE SPAWN
                 case 1:
-                    if(primEntrada){
-                        history = "\n\nOlho ao meu redor, o lugar onde estou de alguma maneira me remete a sala onde eu consegui o HD... Hmm... Na veradede, de fato é a mesma sala onde eu o peguei. Só que está diferente... \nAgora não há mais um computador estranho no meio da sala, e uma bela mobília dá vida a cada canto do lugar.\nAs escadas, agora livres de bloqueio, arqueiam pela sala e, ao que tudo indica, levam a um ponto comum no andar superior. Consigo sentir que lá há algo que eu preciso obter.";
+                if(primEntrada){
+                    history = "\n\nOlho ao meu redor, o lugar onde estou de alguma maneira me remete a sala onde eu consegui o HD... Hmm... Na veradede, de fato é a mesma sala onde eu o peguei. Só que está diferente... \nAgora não há mais um computador estranho no meio da sala, e uma bela mobília dá vida a cada canto do lugar.\nAs escadas, agora livres de bloqueio, arqueiam pela sala e, ao que tudo indica, levam a um ponto comum no andar superior. Consigo sentir que lá há algo que eu preciso obter.";
                         texting(history, 35);
                         primEntrada = false;
                     }
@@ -444,16 +446,16 @@ public class Main {
                     }else{
                         acaoInvalida();
                     }
-                break;
-
-                //CENÁRIO DA MISSÃO PRINCIPAL
-                case 2:
+                    break;
+                    
+                    //CENÁRIO DA MISSÃO PRINCIPAL
+                    case 2:
                     if (primEntrada){
                         history = "\n\nAo subir as escadas, percebo o quão grande é a magnitude dessa casa, uma sala extensa se desenrola em minha frente como um domo, vejo uma espécie de biblioteca tomando conta de todas as partes, seja lá quem vive aqui, certamente é uma pessoa muito estudiosa\nNão me surpreende mais o fato de encontrar este computador estranho pelas salas dessa... digamos... jornada. Só me incomoda o quanto ele parece distópico em relação a todo o resto do ambiente...\nDessa vez ele se encontra no meio da sala, no ponto central que dá origem ao domo redondo que é a sala, a caixa estranha com fios conectados continua lá, e eu sei que ela guarda exatamente o que eu preciso para reparar o dano que sofri.";
                         texting(history, 35);
                         primEntrada = false;
                     }
-
+                    
                     acaoJogador();
 
                     if (acaoJogador.equalsIgnoreCase("olhar")){
@@ -474,28 +476,28 @@ public class Main {
             }
             
         }while(faseIncompleta);
-
+        
     }
     
     static void fase5() throws InterruptedException{
         primEntrada = true;
-
+        
         history = "\n\nOK, o vórtice temporal me puxou e aqui estou eu em um lugar diferente MAIS UMA VEZ...... \nNão entenda errado, estou quase me acostumando com esses frequentes pulos esquisitos e tudo mais, mas... PORQUE EU APARECI NO MEIO DO MATO?";
         texting(history, 35);
 
         do{
             switch(areaCenario){
-
+                
                 //CENÁRIO DE SPAWN
                 case 1:
-                    if(primEntrada){
-                        history = "\nNão tem nada aqui, só... grama e árvores? Hmm olhando melhor, acho que consigo notar alguns detalhes, a grama para aquele lado parece ser mais baixa.. Ah, parece ter uma espécie de... espera, isso é um TÚMULO?? QUE LUGAR É ESSE? É melhor eu evitar aquilo...\n Humpf.. pelo menos a minha intuição não está falhando... tenho que seguir na direção norte, certo? Ok, consigo ver agora, há fitas vermelhas enroladas nos troncos, acho que indicam o caminho...";
-                        texting(history, 35);
-                        primEntrada = false;
-                    }
-                    
-                    acaoJogador();
-                    
+                if(primEntrada){
+                    history = "\nNão tem nada aqui, só... grama e árvores? Hmm olhando melhor, acho que consigo notar alguns detalhes, a grama para aquele lado parece ser mais baixa.. Ah, parece ter uma espécie de... espera, isso é um TÚMULO?? QUE LUGAR É ESSE? É melhor eu evitar aquilo...\n Humpf.. pelo menos a minha intuição não está falhando... tenho que seguir na direção norte, certo? Ok, consigo ver agora, há fitas vermelhas enroladas nos troncos, acho que indicam o caminho...";
+                    texting(history, 35);
+                    primEntrada = false;
+                }
+                
+                acaoJogador();
+                
                     System.out.println("___________________________________________________________________________________________________________________________________________________________________________________________________");
                     if(acaoJogador.equalsIgnoreCase("olhar")){
                         history = "\nBom, não tem muito o que olhar aqui, só esse túmulo macabro e essas árvores com fitas... Tudo bem, a clareira onde estou até pode ser bonita, e o verde de alguma forma acalma meu coração mas... ISSO TUDO NÃO VAI ME AJUDAR A CONTINUAR A JORNADA! Preciso seguir em frente.";
@@ -517,12 +519,12 @@ public class Main {
                         acaoInvalida();
                     }
                 break;
-
+                
                 //CENÁRIO DA MISSÃO PRINCIPAL
                 case 2:
-                    if (primEntrada){
-                        history = "\n\n............\n............\n............";
-                        tempo += 5;
+                if (primEntrada){
+                    history = "\n\n............\n............\n............";
+                    tempo += 5;
                         texting(history, 40);
                         history = "\nAAAAA FINALMENTE! Já não aguentava mais andar por esse bosque, não acredito que já está escurecendo... …Espera aí… estou de volta no jardim da casa? Merda, parece que alguma coisa não está certa… tem uma ambulância estacionada no lugar do carro de antes.. será que tem alguém aqui?";
                         texting(history, 35);
@@ -532,9 +534,9 @@ public class Main {
                         texting(history, 35);
                         primEntrada = false;
                     }
-
+                    
                     acaoJogador();
-
+                    
                     if (acaoJogador.equalsIgnoreCase("olhar")){
                         history = "\n\nA noite está muito escura, só consigo ver ambulância estacionada no quintal.\nComo o homem disse, o computador e a caixa estranha estão dentro dela… \nNos meus arredores não parece haver mais nada que vá me ajudar...\n Preciso resolver a questão no computador!";
                         texting(history, 35);
@@ -547,14 +549,14 @@ public class Main {
                     }else{
                         acaoInvalida();
                     }
-                break;
-            }
-            
-        }while(faseIncompleta);
+                    break;
+                }
+                
+            }while(faseIncompleta);
 
-    }
+        }
 
-    static void fase6() throws InterruptedException{ //BOSS FIGHT
+        static void fase6() throws InterruptedException{ //BOSS FIGHT
         do{
             //TEXTO DE INTRODUÇÃO DO CENÁRIO.
             history = "\n\nAcordei com uma sensação estranha, ainda estava no chão quando ouvi aquela voz novamente.\n\nParabéns, quinto bloco de memória recuperado com sucesso, faltam aproximadamente\n...................\n5 blocos de memóra, continue com o bom trabalho.\n\nOlho ao meu redor, estou mais uma vez na sala principal da casa, mas... essa não, vejo as ferramentas flutuando pela sala de novo, e dessa vez elas parecem ENSANGUENTADAS? MAS QUE MERDA É ESSA?... Merda, sinto que aquele robô escroto pode aparecer a qualquer momento... É melhor eu sair logo daqui.\n\nO computador e a caixa estão no centro da sala mais uma vez, sob a mesa de vidro, na caixa parece haver uma espécime de dissipador de calor.\nComeço a caminhar em direção ao computador mas a sensação de que algo não está certo se faz presente de novo.. o clima está pesado demais.. Chego perto da mesa de centro, ao interagir com o computador, UM VOID EM ESPIRAL surge bem em minha frente...";
@@ -573,7 +575,7 @@ public class Main {
             //RELATÓRIO DE COMBATE
             history = "\n\n\nAtenção ameaça de alto nível detectada, modo de combate ativado - Enquanto a voz fala, sinto meu corpo ficando cada vez mais leve, é como se algo dentro de mim começasse a se mover, tornando cada um dos meus movimentos mais precisos - Menu de combate ativado, recomendo que escolha seus \n\n";
             texting(history, 35);
-
+            
             //Encontro com o Boss e início da boss fight
             //BossFight(); - Transferido para o seletor de fases.
             faseIncompleta = false;
@@ -583,27 +585,27 @@ public class Main {
     
     static void fase7() throws InterruptedException{
         primEntrada = true;
-
+        
         history = "\n\nCerto, cheguei na nova área, não tenho mais tempo a perder.\n\nParabéns, sexto bloco de memória recuperado com sucesso, faltam aproximadamente\n...................\n4 blocos de memóra, continue com o bom trabalho.";
         texting(history, 35);
-
+        
         do{
             switch(areaCenario){
-
+                
                 //CENÁRIO DE SPAWN
                 case 1:
-                    if(primEntrada){
-                        history = "\n\n Hmm... Estou nessa maldita sala mais uma vez... vejamos, nada mais está certo, os objetos estão flutuando por toda parte, as escadas não existem mais, mas as mesas e cadeiras parecem formar uma espécime de ponte para o próximo andar, preciso ir até lá.";
-                        texting(history, 35);
-                        primEntrada = false;
-                    }
-                    
-                    acaoJogador();
-                    
-                    System.out.println("___________________________________________________________________________________________________________________________________________________________________________________________________");
-                    if(acaoJogador.equalsIgnoreCase("olhar")){
-                        history = "\n\nEsse lugar está um caos, a ténue linha de espaço tempo está cada vez mais frágil, muitos pulos foram necessários para reuniar as informações necessárias... Além dos objetos flutuando pela sala... bom, tudo parece normal... Hmm, parece haver algo na lareira que eu havia visto antes.. Será que alguém tentou queimar algo ali?";
-                        texting(history, 35);
+                if(primEntrada){
+                    history = "\n\n Hmm... Estou nessa maldita sala mais uma vez... vejamos, nada mais está certo, os objetos estão flutuando por toda parte, as escadas não existem mais, mas as mesas e cadeiras parecem formar uma espécime de ponte para o próximo andar, preciso ir até lá.";
+                    texting(history, 35);
+                    primEntrada = false;
+                }
+                
+                acaoJogador();
+                
+                System.out.println("___________________________________________________________________________________________________________________________________________________________________________________________________");
+                if(acaoJogador.equalsIgnoreCase("olhar")){
+                    history = "\n\nEsse lugar está um caos, a ténue linha de espaço tempo está cada vez mais frágil, muitos pulos foram necessários para reuniar as informações necessárias... Além dos objetos flutuando pela sala... bom, tudo parece normal... Hmm, parece haver algo na lareira que eu havia visto antes.. Será que alguém tentou queimar algo ali?";
+                    texting(history, 35);
                     }else if(acaoJogador.equalsIgnoreCase("frente") || acaoJogador.equalsIgnoreCase("subir") || acaoJogador.equalsIgnoreCase("mesas") || acaoJogador.equalsIgnoreCase("mesa") || acaoJogador.equalsIgnoreCase("caminho")){
                         areaCenario = 2;
                         primEntrada = true;
@@ -652,12 +654,77 @@ public class Main {
     }
     
     static void fase8() throws InterruptedException{
-        do{
+        primEntrada = true;
 
+        history = "\n\n";
+        texting(history, 35);
+
+        do{
+            switch(areaCenario){
+
+                //CENÁRIO DE SPAWN
+                case 1:
+                    if(primEntrada){
+                        history = "\n\nHmmm... que lugar é esse? Parece diferente de tudo que eu já vi até agora... Eu morri e vim para o paraíso Tudo aqui é de um branco infinito... contemplar o horizonte me faz perder a noção de espaço.. Que? Estou perdido... O que as cordenadas dizem?\n.....\nHmmm seguir ao sul... Não é como se eu tivesse muitas escolhas para tomar aqui né...";
+                        texting(history, 35);
+                        primEntrada = false;
+                    }
+                    
+                    acaoJogador();
+                    
+                    System.out.println("___________________________________________________________________________________________________________________________________________________________________________________________________");
+                    if(acaoJogador.equalsIgnoreCase("olhar")){
+                        history = "\n\nEsse lugar absurdo, eu não consigo entender nada do que está acontecendo aqui... enquanto ando consigo ver algumas, não sei como chamar... janelas? Sim, vou chamar de janelas... elas são projetadas no chão e ao meu redor, todas elas parecem dizer a mesma coisa... Será que eu deveria parar para ver uma delas? Bom, acho que tenho certo tempo para decidir enquanto caminho...";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("sul") || acaoJogador.equalsIgnoreCase("descer") || acaoJogador.equalsIgnoreCase("seguir")){
+                        areaCenario = 2;
+                        primEntrada = true;
+                    }else if(acaoJogador.equalsIgnoreCase("Interagir")){
+                        interacaoInvalida();
+                    }else if(acaoJogador.equalsIgnoreCase("voltar")){
+                        history = "\nAtrás de mim... é, como eu imaginei, um vácuo branco... se bem que.. hm, espera, É ASSIM PARA TODOS OS LADOS!!!\nMerda de lugar maldito... Ainda bem que eu sou equipado com uma bulsola. Melhor continuar indo para o Sul.";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("janelas")||acaoJogador.equalsIgnoreCase("janela")||acaoJogador.equalsIgnoreCase("reflexo") || acaoJogador.equalsIgnoreCase("reflexos")){
+                        history = "\nConsigo ver um homem, seu rosto está borrado, mas ele parece escrever algo em um papel... Vejamos... Está escrevendo: ";
+                        texting(history, 35);
+                        history = "\nA fonte de alimentação é um componente de aparelhos eletrônicos que serve para transformar a energia elétrica que chega pelas tomadas em uma corrente elétrica contínua. Ou seja, ela recebe a energia em 110V ou 220V e transforma na voltagem adequada para o funcionamento do aparelho, que geralmente é 12V.";
+                        texting(history, 45);
+                        history = "\nBom, claramente essa é uma dica relacionada ao objeto dessa área... melhor guardar bem essas informações.";
+                        texting(history, 35);
+                    }else{
+                        acaoInvalida();
+                    }
+                break;
+
+                //CENÁRIO DA MISSÃO PRINCIPAL
+                case 2:
+                    if (primEntrada){
+                        history = "\n\nApós andar horrores pude ver no horizonte os malditos computadores... Por que demoraram tanto para aparecer? Que inferno...\nParando para pensar, algo ainda mais importante, porquê estão ambos aqui nesse exato momento?";
+                        texting(history, 35);
+                        primEntrada = false;
+                    }
+
+                    acaoJogador();
+
+                    if (acaoJogador.equalsIgnoreCase("olhar")){
+                        history = "Os dois computadores estão bem na minha frente. Fora isso, a imensidão branca me aguarda... melhor interagir com um deles.";
+                        texting(history, 35);
+                    }else if(acaoJogador.equalsIgnoreCase("Frente")||acaoJogador.equalsIgnoreCase("Entrar")){
+                        caminhoInvalido();
+                    }else if(acaoJogador.equalsIgnoreCase("Computador")||acaoJogador.equalsIgnoreCase("Computadores") ||acaoJogador.equalsIgnoreCase("Caixa")||acaoJogador.equalsIgnoreCase("Caixas")||acaoJogador.equalsIgnoreCase("Interagir")){
+                        faseIncompleta = false;
+                    }else if(acaoJogador.equalsIgnoreCase("Voltar")){
+                        history = "Pra onde diabos eu deveria voltar?";
+                        texting(history, 35);
+                    }else{
+                        history = "Melhor acessar logo o computador...";
+                        texting(history, 35);
+                    }
+                break;
+            }
+            
         }while(faseIncompleta);
 
-        //Upgrades do player
-        damagePlayer += 10;
     }
     
     static void fase9() throws InterruptedException{ //BOSS FIGHT
@@ -909,12 +976,14 @@ public class Main {
             if(acaoQuest.equalsIgnoreCase("A") || acaoQuest.equalsIgnoreCase("C")){
                 erraQuest();
             }else if(acaoQuest.equalsIgnoreCase("B")){ //CORRETA
-                history = "\n\nAAAH, A CAIXA ABRIU!!!";
+                history = "\n\nCaixa aberta mais uma vez.";
                 texting(history, 10);
-                /*§§§§§*/history = "\nPor que esse treco abriu tão violentamente? Eu tomei um susto!\nEnfim, o que temos aqui???\nUm HD? Hmm... A entrada é exatamente a mesma do computador, será que eu deveria conect";
+                history = "\nVamos lá, eu preciso ir logo...\n\nParabéns, oitavo bloco de memória recuperado com sucesso, faltam aproximadamente\n...................\n2 blocos de memóra, continue com o bom trabalho.\n\n OK SÓ MAIS DUAS.\n\nAh, verdade, o que temos na caixa... Hmm? Claro, uma fonte de energia, algo me diz que isso será muito útil.. Bom, aclopando às células de energia.";
                 texting(history, 35);
                 history = ".......";
                 texting(history, 80);
+                history = "Verdade, o outro computador também está aqui... Isso não me parece certo... Enfim, vamos ver o que temos aq.........";
+                texting(history, 45);
 
                 faseIncompleta = false;
             }else{
